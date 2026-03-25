@@ -1,6 +1,22 @@
 import { NextRequest, NextResponse } from "next/server";
 import { SignJWT } from "jose";
 import { compare } from "bcryptjs";
+import { readJsonFile, SiteConfig } from "@/lib/data";
+
+async function getAdminCredentials(): Promise<{ email: string; hash: string }> {
+  // Try config file first (reliable — no env var $ issues)
+  try {
+    const config = await readJsonFile<SiteConfig>("config.json");
+    if (config.adminEmail && config.adminPasswordHash) {
+      return { email: config.adminEmail, hash: config.adminPasswordHash };
+    }
+  } catch { /* fall through to env vars */ }
+  // Fallback to env vars
+  return {
+    email: process.env.ADMIN_EMAIL ?? "",
+    hash: process.env.ADMIN_PASSWORD_HASH ?? "",
+  };
+}
 
 export async function POST(req: NextRequest) {
   try {
@@ -18,29 +34,19 @@ export async function POST(req: NextRequest) {
       );
     }
 
-    // Read env vars at request time for serverless compatibility
-    const adminEmail = process.env.ADMIN_EMAIL ?? "";
-    const adminPasswordHash = process.env.ADMIN_PASSWORD_HASH ?? "";
+    const { email: adminEmail, hash: adminPasswordHash } = await getAdminCredentials();
     const jwtSecret = new TextEncoder().encode(
       process.env.JWT_SECRET ?? "change-me-in-production"
     );
 
     if (!adminEmail || !adminPasswordHash) {
-      console.error(
-        "Login config missing — ADMIN_EMAIL set:",
-        !!adminEmail,
-        "ADMIN_PASSWORD_HASH set:",
-        !!adminPasswordHash,
-        "hash starts with $2:",
-        adminPasswordHash.startsWith("$2")
-      );
+      console.error("Login config missing — check data/config.json or env vars");
       return NextResponse.json(
         { error: "Server authentication not configured" },
         { status: 503 }
       );
     }
 
-    // Constant-time-ish check: always compare both fields
     const emailMatch = email.toLowerCase() === adminEmail.toLowerCase();
     const passwordMatch = await compare(password, adminPasswordHash);
 

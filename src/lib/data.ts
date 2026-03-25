@@ -58,4 +58,6 @@ export interface FaqsData {
 
 export interface SiteConfig {
   googlePlacesApiKey: string;
+  adminEmail?: string;
+  adminPasswordHash?: string;
 }
