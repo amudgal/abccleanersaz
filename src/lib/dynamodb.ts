@@ -3,51 +3,40 @@ import {
   DynamoDBDocumentClient,
   GetCommand,
   PutCommand,
-  ScanCommand,
 } from "@aws-sdk/lib-dynamodb";
 
 const client = new DynamoDBClient({
-  region: process.env.AWS_REGION ?? "us-west-2",
+  region: process.env.AWS_REGION ?? "us-east-1",
 });
 
 export const docClient = DynamoDBDocumentClient.from(client, {
   marshallOptions: { removeUndefinedValues: true },
 });
 
-const TABLE_NAME = process.env.DYNAMODB_USERS_TABLE ?? "ABCCleanersUsers";
+const TABLE_NAME = process.env.DYNAMODB_TABLE ?? "ABCCleaners";
 
-export interface UserRecord {
-  email: string;
-  passwordHash: string;
-  role: string;
-  name?: string;
-  createdAt: string;
-}
+/**
+ * Single-table design using `pk` as the partition key.
+ * Records stored:
+ *   pk="CONFIG"    → site config (API keys, admin credentials)
+ *   pk="PRICING"   → pricing data (visible flag + categories)
+ *   pk="FAQS"      → FAQ data (visible flag + faqs list)
+ */
 
-export async function getUserByEmail(
-  email: string
-): Promise<UserRecord | null> {
+export async function getItem<T>(pk: string): Promise<T | null> {
   const result = await docClient.send(
-    new GetCommand({
-      TableName: TABLE_NAME,
-      Key: { email: email.toLowerCase() },
-    })
+    new GetCommand({ TableName: TABLE_NAME, Key: { pk } })
   );
-  return (result.Item as UserRecord) ?? null;
+  if (!result.Item) return null;
+  const { pk: _pk, ...data } = result.Item;
+  return data as T;
 }
 
-export async function putUser(user: UserRecord): Promise<void> {
+export async function putItem<T extends Record<string, unknown>>(
+  pk: string,
+  data: T
+): Promise<void> {
   await docClient.send(
-    new PutCommand({
-      TableName: TABLE_NAME,
-      Item: { ...user, email: user.email.toLowerCase() },
-    })
+    new PutCommand({ TableName: TABLE_NAME, Item: { pk, ...data } })
   );
-}
-
-export async function listUsers(): Promise<UserRecord[]> {
-  const result = await docClient.send(
-    new ScanCommand({ TableName: TABLE_NAME })
-  );
-  return (result.Items as UserRecord[]) ?? [];
 }

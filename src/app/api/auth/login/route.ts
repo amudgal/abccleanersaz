@@ -4,23 +4,19 @@ import { compare } from "bcryptjs";
 import { readJsonFile, SiteConfig } from "@/lib/data";
 
 async function getAdminCredentials(): Promise<{ email: string; hash: string }> {
-  // Try config file first (reliable — no env var $ issues)
+  // Read from DynamoDB (via readJsonFile which tries DynamoDB first)
   try {
     const config = await readJsonFile<SiteConfig>("config.json");
     if (config.adminEmail && config.adminPasswordHash) {
       return { email: config.adminEmail, hash: config.adminPasswordHash };
     }
   } catch (err) {
-    console.error("Could not read config.json for auth:", err);
+    console.error("Could not read config for auth:", err);
   }
   // Fallback to env vars
-  const email = process.env.ADMIN_EMAIL ?? "";
-  const hash = process.env.ADMIN_PASSWORD_HASH ?? "";
-  if (email && hash) return { email, hash };
-  // Last-resort hardcoded default (safe: hash is one-way)
   return {
-    email: "admin@abccleaners.com",
-    hash: "$2a$10$JWTli1QCEPz8YSrqS6LD3eJjY2vvRIsD/zJ4K9EUp7a0.bA8jvlzi",
+    email: process.env.ADMIN_EMAIL ?? "",
+    hash: process.env.ADMIN_PASSWORD_HASH ?? "",
   };
 }
 

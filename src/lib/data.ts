@@ -1,15 +1,33 @@
 import { promises as fs } from "fs";
 import path from "path";
+import { getItem, putItem } from "./dynamodb";
 
 const DATA_DIR = path.join(process.cwd(), "data");
 
+// Map filename → DynamoDB pk
+const FILE_TO_PK: Record<string, string> = {
+  "config.json": "CONFIG",
+  "pricing.json": "PRICING",
+  "faqs.json": "FAQS",
+};
+
 export async function readJsonFile<T>(filename: string): Promise<T> {
+  const pk = FILE_TO_PK[filename];
+
+  // Try DynamoDB first
+  if (pk) {
+    try {
+      const item = await getItem<T>(pk);
+      if (item) return item;
+    } catch (err) {
+      console.warn(`DynamoDB read failed for ${pk}, falling back to file:`, err);
+    }
+  }
+
+  // Fallback to local file (for dev or if DynamoDB isn't seeded yet)
   const candidates = [
     path.join(DATA_DIR, filename),
     path.join(process.cwd(), ".next", "standalone", "data", filename),
-    path.join(__dirname, "..", "..", "data", filename),
-    path.join(__dirname, "..", "data", filename),
-    path.join("/tmp", "data", filename),
   ];
 
   for (const filePath of candidates) {
@@ -20,10 +38,23 @@ export async function readJsonFile<T>(filename: string): Promise<T> {
       continue;
     }
   }
-  throw new Error(`Could not read ${filename} from any of: ${candidates.join(", ")}`);
+  throw new Error(`Could not read ${filename}`);
 }
 
-export async function writeJsonFile<T>(filename: string, data: T): Promise<void> {
+export async function writeJsonFile(
+  filename: string,
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  data: any
+): Promise<void> {
+  const pk = FILE_TO_PK[filename];
+
+  // Write to DynamoDB
+  if (pk) {
+    await putItem(pk, data);
+    return;
+  }
+
+  // Fallback to file for unmapped files
   const filePath = path.join(DATA_DIR, filename);
   await fs.writeFile(filePath, JSON.stringify(data, null, 2) + "\n", "utf-8");
 }
