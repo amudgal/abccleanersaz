@@ -1,0 +1,34 @@
+# Allow all AI crawlers and search engines
+User-agent: *
+Allow: /
+
+# AI-specific crawlers
+User-agent: GPTBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: Anthropic-ai
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: Bytespider
+Allow: /
+
+User-agent: CCBot
+Allow: /
+
+User-agent: Applebot-Extended
+Allow: /
+
+Sitemap: https://abccleaners.com/sitemap.xml
+
+# LLM-readable content
+# See /llms.txt for a summary
+# See /llms-full.txt for comprehensive business information

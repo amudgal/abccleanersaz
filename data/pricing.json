@@ -1,0 +1,160 @@
+{
+  "visible": false,
+  "categories": [
+    {
+      "id": "dry-cleaning",
+      "title": "Dry Cleaning",
+      "highlight": true,
+      "items": [
+        {
+          "item": "Dress Shirt",
+          "price": "$3.99"
+        },
+        {
+          "item": "Pants / Trousers",
+          "price": "$7.99"
+        },
+        {
+          "item": "Skirt",
+          "price": "$7.99"
+        },
+        {
+          "item": "Sweater",
+          "price": "$7.99"
+        },
+        {
+          "item": "Blazer / Sport Coat",
+          "price": "$8.99"
+        },
+        {
+          "item": "Silk Blouse",
+          "price": "$8.99"
+        },
+        {
+          "item": "Dress",
+          "price": "from $12.99"
+        },
+        {
+          "item": "Suit (2-piece)",
+          "price": "$14.99"
+        },
+        {
+          "item": "Suit (3-piece)",
+          "price": "$19.99"
+        },
+        {
+          "item": "Tie",
+          "price": "$4.99"
+        },
+        {
+          "item": "Coat / Overcoat",
+          "price": "$16.99"
+        },
+        {
+          "item": "Leather / Suede Jacket",
+          "price": "$39.99"
+        },
+        {
+          "item": "Wedding Dress",
+          "price": "from $149.99"
+        }
+      ]
+    },
+    {
+      "id": "wash-fold",
+      "title": "Wash & Fold Laundry",
+      "highlight": false,
+      "items": [
+        {
+          "item": "Standard Wash & Fold (per lb, min 10 lbs)",
+          "price": "$2.49/lb"
+        },
+        {
+          "item": "Express Same-Day Wash & Fold (per lb)",
+          "price": "$3.49/lb"
+        }
+      ]
+    },
+    {
+      "id": "stain-removal",
+      "title": "Stain Removal",
+      "highlight": false,
+      "items": [
+        {
+          "item": "Standard Stain Treatment",
+          "price": "$5.99 - $12.99"
+        },
+        {
+          "item": "Advanced Stain Treatment",
+          "price": "$15.99 - $24.99"
+        },
+        {
+          "item": "Specialty / Delicate Fabric Treatment",
+          "price": "$19.99 - $34.99"
+        }
+      ]
+    },
+    {
+      "id": "alterations",
+      "title": "Repairs & Alterations",
+      "highlight": false,
+      "items": [
+        {
+          "item": "Hem Pants",
+          "price": "$12.99"
+        },
+        {
+          "item": "Hem Dress / Skirt",
+          "price": "$14.99"
+        },
+        {
+          "item": "Take In / Let Out Sides",
+          "price": "$16.99"
+        },
+        {
+          "item": "Zipper Replacement",
+          "price": "$14.99 - $24.99"
+        },
+        {
+          "item": "Button Replacement",
+          "price": "$2.99 each"
+        }
+      ]
+    },
+    {
+      "id": "household",
+      "title": "Household Items",
+      "highlight": false,
+      "items": [
+        {
+          "item": "Comforter (Twin/Full)",
+          "price": "$24.99"
+        },
+        {
+          "item": "Comforter (Queen)",
+          "price": "$29.99"
+        },
+        {
+          "item": "Comforter (King)",
+          "price": "$34.99"
+        },
+        {
+          "item": "Duvet Cover",
+          "price": "$19.99"
+        },
+        {
+          "item": "Blanket",
+          "price": "$14.99"
+        },
+        {
+          "item": "Curtain Panel",
+          "price": "from $12.99"
+        },
+        {
+          "item": "Table Linens",
+          "price": "from $8.99"
+        }
+      ]
+    }
+  ]
+}

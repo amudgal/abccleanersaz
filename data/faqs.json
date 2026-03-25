@@ -1,0 +1,65 @@
+{
+  "visible": true,
+  "faqs": [
+    {
+      "id": "pricing",
+      "question": "How much does dry cleaning cost at ABC Cleaners?",
+      "answer": "Our dry cleaning prices start at $3.99 for shirts and $5.99 for pants. Suits are $12.99, dresses start at $9.99, and winter coats range from $15.99 to $24.99. We also offer wash & fold at $1.99/lb (min 10 lbs). Visit our pricing page for a complete breakdown.",
+      "visible": true
+    },
+    {
+      "id": "stains",
+      "question": "Can you remove tough stains like wine, grease, or ink?",
+      "answer": "Yes! Our expert technicians specialize in removing stubborn stains including wine, grease, oil, ink, blood, coffee, and grass. Basic stain treatment starts at $5.99, advanced treatment at $12.99, and specialty stain removal at $19.99. The sooner you bring it in, the better the results. Check our stain removal guide for tips.",
+      "visible": true
+    },
+    {
+      "id": "pickup-delivery",
+      "question": "Do you offer pickup and delivery?",
+      "answer": "Yes! We offer free pickup and delivery on orders over $30. For orders under $30, a $5.99 delivery fee applies. We serve the greater Phoenix area including Norterra, Happy Valley, Deer Valley, Biltmore, Arcadia, and Camelback East. Typical turnaround is 24–48 hours.",
+      "visible": true
+    },
+    {
+      "id": "hours",
+      "question": "What are your hours of operation?",
+      "answer": "North Phoenix is open Monday through Friday from 7:00 AM to 6:30 PM, and Saturday from 8:00 AM to 3:00 PM. Biltmore is open Monday through Friday from 7:00 AM to 6:30 PM, and Saturday from 8:00 AM to 5:00 PM. Both locations are closed on Sundays. For emergencies or rush orders, call us directly and we'll do our best to accommodate.",
+      "visible": true
+    },
+    {
+      "id": "locations",
+      "question": "Where are your locations?",
+      "answer": "We have two convenient Phoenix locations: North Phoenix at 1930 W Pinnacle Peak Rd, Phoenix AZ 85027 (phone: 602-956-5271) and Biltmore at 3023 N 24th St, Phoenix AZ 85016 (phone: 623-223-1460). Both have ample parking and are easy to access.",
+      "visible": true
+    },
+    {
+      "id": "same-day",
+      "question": "Is same-day dry cleaning available?",
+      "answer": "Yes, same-day service is available for items dropped off before 10:00 AM at either location. Rush service is available on request for an additional fee. Contact us to confirm availability for your specific items.",
+      "visible": true
+    },
+    {
+      "id": "eco-friendly",
+      "question": "Are your cleaning methods eco-friendly?",
+      "answer": "Absolutely! ABC Cleaners uses environmentally-friendly cleaning solutions and energy-efficient equipment. We avoid harsh chemicals like PERC and instead use safer, biodegradable alternatives that are gentle on fabrics and the environment.",
+      "visible": true
+    },
+    {
+      "id": "commercial",
+      "question": "Do you offer commercial laundry services?",
+      "answer": "Yes, we provide commercial laundry solutions for hotels, restaurants, spas, offices, and schools. Services include bulk linen cleaning, uniform programs, and custom plans with volume discounts. Contact us for a commercial quote.",
+      "visible": true
+    },
+    {
+      "id": "alterations",
+      "question": "Do you offer alterations and tailoring?",
+      "answer": "Yes! We provide professional alterations including hemming ($8.99+), taking in/letting out seams ($12.99+), zipper replacement ($14.99+), and formal wear alterations ($24.99+). Our skilled tailors handle everything from simple repairs to complex adjustments.",
+      "visible": true
+    },
+    {
+      "id": "household",
+      "question": "What household items can you clean?",
+      "answer": "We clean comforters ($19.99–$29.99), blankets ($14.99), pillows ($9.99 each), curtains ($12.99/panel), table linens ($4.99/piece), rugs (starting at $29.99), and sleeping bags ($24.99). All items are inspected and handled with care.",
+      "visible": true
+    }
+  ]
+}
