@@ -7,8 +7,10 @@ applications:
             - npm ci
         build:
           commands:
+            - env | grep -E '^(ADMIN_|JWT_|GOOGLE_|NEXT_PUBLIC_)' > .env.production
             - npm run build
             - cp -r data .next/standalone/data 2>/dev/null || true
+            - cp .env.production .next/standalone/.env.production 2>/dev/null || true
       artifacts:
         baseDirectory: .next
         files:

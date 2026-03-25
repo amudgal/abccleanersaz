@@ -3,8 +3,14 @@ const nextConfig = {
   output: 'standalone',
   experimental: {
     outputFileTracingIncludes: {
-      '/*': ['./data/**'],
+      '/*': ['./data/**', '.env.production'],
     },
+  },
+  env: {
+    ADMIN_EMAIL: process.env.ADMIN_EMAIL,
+    ADMIN_PASSWORD_HASH: process.env.ADMIN_PASSWORD_HASH,
+    JWT_SECRET: process.env.JWT_SECRET,
+    GOOGLE_PLACES_API_KEY: process.env.GOOGLE_PLACES_API_KEY,
   },
   images: {
     remotePatterns: [
