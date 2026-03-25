@@ -55,3 +55,7 @@ export interface FaqsData {
   visible: boolean;
   faqs: FaqItem[];
 }
+
+export interface SiteConfig {
+  googlePlacesApiKey: string;
+}

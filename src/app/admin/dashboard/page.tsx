@@ -88,6 +88,17 @@ export default function AdminDashboardPage() {
               </CardContent>
             </Card>
           </Link>
+          <Link href="/admin/dashboard/settings">
+            <Card className="hover:shadow-lg hover:border-[#2b7fb5] transition-all cursor-pointer h-full">
+              <CardContent className="p-6">
+                <div className="w-12 h-12 rounded-lg bg-gray-100 text-gray-600 flex items-center justify-center mb-4">
+                  <Settings className="w-6 h-6" />
+                </div>
+                <h3 className="font-semibold text-gray-900">Settings</h3>
+                <p className="text-sm text-gray-500 mt-1">Configure API keys and site settings</p>
+              </CardContent>
+            </Card>
+          </Link>
         </div>
 
         {/* Other sections */}
@@ -97,7 +108,6 @@ export default function AdminDashboardPage() {
             { icon: <BarChart3 className="w-6 h-6" />, label: "Analytics", color: "bg-purple-50 text-purple-600" },
             { icon: <FileText className="w-6 h-6" />, label: "Orders", color: "bg-orange-50 text-orange-600" },
             { icon: <Users className="w-6 h-6" />, label: "Customers", color: "bg-pink-50 text-pink-600" },
-            { icon: <Settings className="w-6 h-6" />, label: "Settings", color: "bg-gray-100 text-gray-600" },
           ].map((item) => (
             <Card key={item.label} className="opacity-60">
               <CardContent className="p-6">

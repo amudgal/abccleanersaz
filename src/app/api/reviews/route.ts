@@ -1,4 +1,13 @@
 import { NextRequest, NextResponse } from "next/server";
+import { readJsonFile, SiteConfig } from "@/lib/data";
+
+async function getApiKey(): Promise<string> {
+  try {
+    const config = await readJsonFile<SiteConfig>("config.json");
+    if (config.googlePlacesApiKey) return config.googlePlacesApiKey;
+  } catch { /* fall through */ }
+  return process.env.GOOGLE_PLACES_API_KEY ?? "";
+}
 
 // Google Place IDs for ABC Cleaners locations
 const PLACE_CONFIG: Record<
@@ -169,10 +178,10 @@ export async function GET(req: NextRequest) {
     );
   }
 
-  const apiKey = process.env.GOOGLE_PLACES_API_KEY;
+  const apiKey = await getApiKey();
   if (!apiKey) {
     return NextResponse.json(
-      { error: "Google Places API key not configured." },
+      { error: "Google Places API key not configured. Set it in Admin → Settings." },
       { status: 503 }
     );
   }
