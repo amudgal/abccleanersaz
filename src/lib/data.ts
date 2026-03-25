@@ -4,9 +4,20 @@ import path from "path";
 const DATA_DIR = path.join(process.cwd(), "data");
 
 export async function readJsonFile<T>(filename: string): Promise<T> {
-  const filePath = path.join(DATA_DIR, filename);
-  const raw = await fs.readFile(filePath, "utf-8");
-  return JSON.parse(raw) as T;
+  const candidates = [
+    path.join(DATA_DIR, filename),
+    path.join(process.cwd(), ".next", "standalone", "data", filename),
+  ];
+
+  for (const filePath of candidates) {
+    try {
+      const raw = await fs.readFile(filePath, "utf-8");
+      return JSON.parse(raw) as T;
+    } catch {
+      continue;
+    }
+  }
+  throw new Error(`Could not read ${filename}`);
 }
 
 export async function writeJsonFile<T>(filename: string, data: T): Promise<void> {

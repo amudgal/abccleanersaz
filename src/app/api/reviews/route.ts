@@ -1,6 +1,4 @@
 import { NextRequest, NextResponse } from "next/server";
-import fs from "fs/promises";
-import path from "path";
 
 // Google Place IDs for ABC Cleaners locations
 const PLACE_CONFIG: Record<
@@ -19,9 +17,6 @@ const PLACE_CONFIG: Record<
   },
 };
 
-// ─── Persistent JSON file cache ───
-const CACHE_DIR = path.join(process.cwd(), "data");
-const CACHE_FILE = path.join(CACHE_DIR, "reviews-cache.json");
 const FETCH_INTERVAL = 60 * 60 * 1000; // 1 hour between Google API fetches
 
 interface CachedReview {
@@ -31,9 +26,7 @@ interface CachedReview {
   rating: number;
   text: string;
   relativeTime: string;
-  /** Stable key for deduplication: hash of author+text */
   _key: string;
-  /** ISO timestamp of when this review was first seen */
   _firstSeen: string;
 }
 
@@ -45,36 +38,16 @@ interface CachedLocation {
   lastFetched: number; // epoch ms
 }
 
-interface ReviewsCacheFile {
+interface ReviewsCache {
   biltmore: CachedLocation | null;
   "north-phoenix": CachedLocation | null;
 }
 
-// In-memory mirror of the file cache (avoids reading file on every request)
-let memoryCache: ReviewsCacheFile | null = null;
+// Pure in-memory cache (resets on cold start — acceptable for serverless)
+let memoryCache: ReviewsCache = { biltmore: null, "north-phoenix": null };
 
 function reviewKey(author: string, text: string): string {
-  // Simple stable key from author + first 100 chars of text
   return `${author}::${(text || "").slice(0, 100)}`;
-}
-
-async function readCacheFile(): Promise<ReviewsCacheFile> {
-  if (memoryCache) return memoryCache;
-  try {
-    const raw = await fs.readFile(CACHE_FILE, "utf-8");
-    memoryCache = JSON.parse(raw);
-    return memoryCache!;
-  } catch {
-    const empty: ReviewsCacheFile = { biltmore: null, "north-phoenix": null };
-    memoryCache = empty;
-    return empty;
-  }
-}
-
-async function writeCacheFile(data: ReviewsCacheFile): Promise<void> {
-  memoryCache = data;
-  await fs.mkdir(CACHE_DIR, { recursive: true });
-  await fs.writeFile(CACHE_FILE, JSON.stringify(data, null, 2));
 }
 
 /** Merge new reviews into existing cached reviews. New unique reviews are added; existing ones are kept. */
@@ -220,9 +193,8 @@ export async function GET(req: NextRequest) {
       config.placeId = placeId;
     }
 
-    // Read persistent cache
-    const cache = await readCacheFile();
-    const cachedLocation = cache[location];
+    // Check in-memory cache
+    const cachedLocation = memoryCache[location];
 
     // If cache is fresh enough, return it directly
     if (
@@ -244,34 +216,31 @@ export async function GET(req: NextRequest) {
     // Fetch fresh reviews from Google
     const fresh = await fetchFromGoogle(placeId, apiKey, config.name);
 
-    // Merge with existing cached reviews (accumulates over time)
+    // Merge with existing cached reviews (accumulates within this process)
     const existingReviews = cachedLocation?.reviews ?? [];
     const merged = mergeReviews(existingReviews, fresh.reviews);
 
-    // Update cache
-    const updatedLocation: CachedLocation = {
+    // Update in-memory cache
+    memoryCache[location] = {
       locationName: config.name,
       rating: fresh.rating,
       totalReviews: fresh.totalReviews,
       reviews: merged,
       lastFetched: Date.now(),
     };
-    cache[location] = updatedLocation;
-    await writeCacheFile(cache);
 
     return NextResponse.json(
       {
-        locationName: updatedLocation.locationName,
-        rating: updatedLocation.rating,
-        totalReviews: updatedLocation.totalReviews,
+        locationName: config.name,
+        rating: fresh.rating,
+        totalReviews: fresh.totalReviews,
         reviews: merged,
       },
       { headers: { "X-Cache": "MISS" } }
     );
   } catch (err) {
-    // If fetch fails but we have cached data, return stale cache
-    const cache = await readCacheFile();
-    const stale = cache[location];
+    // If fetch fails but we have in-memory cached data, return stale
+    const stale = memoryCache[location];
     if (stale && stale.reviews.length > 0) {
       return NextResponse.json(
         {

@@ -8,6 +8,7 @@ applications:
         build:
           commands:
             - npm run build
+            - cp -r data .next/standalone/data 2>/dev/null || true
       artifacts:
         baseDirectory: .next
         files:
