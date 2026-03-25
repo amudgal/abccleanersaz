@@ -7,6 +7,9 @@ export async function readJsonFile<T>(filename: string): Promise<T> {
   const candidates = [
     path.join(DATA_DIR, filename),
     path.join(process.cwd(), ".next", "standalone", "data", filename),
+    path.join(__dirname, "..", "..", "data", filename),
+    path.join(__dirname, "..", "data", filename),
+    path.join("/tmp", "data", filename),
   ];
 
   for (const filePath of candidates) {
@@ -17,7 +20,7 @@ export async function readJsonFile<T>(filename: string): Promise<T> {
       continue;
     }
   }
-  throw new Error(`Could not read ${filename}`);
+  throw new Error(`Could not read ${filename} from any of: ${candidates.join(", ")}`);
 }
 
 export async function writeJsonFile<T>(filename: string, data: T): Promise<void> {
