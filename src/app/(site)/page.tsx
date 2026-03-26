@@ -1,6 +1,7 @@
 import Link from "next/link";
 import Image from "next/image";
-import { Sparkles, Clock, Truck, ShieldCheck, Star, Award, Heart, Leaf, Shirt } from "lucide-react";
+import { Sparkles, Clock, Truck, ShieldCheck, Star, Award, Heart, Leaf } from "lucide-react";
+import DryCleaningIcon from "@/components/icons/DryCleaningIcon";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 
@@ -13,7 +14,7 @@ export default function HomePage() {
   ];
 
   const quickServices = [
-    { name: "Dry Cleaning", icon: <Shirt className="w-8 h-8" />, link: "/services#dry-cleaning" },
+    { name: "Dry Cleaning", icon: <DryCleaningIcon className="w-8 h-8" />, link: "/services#dry-cleaning" },
     { name: "Wash & Fold", icon: "🧺", link: "/services#wash-fold" },
     { name: "Stain Removal", icon: "✨", link: "/stain-removal-guide" },
     { name: "Alterations", icon: "🪡", link: "/services#alterations" },

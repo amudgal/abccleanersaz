@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { Package, MapPin, ExternalLink, ShieldCheck, Shirt } from "lucide-react";
+import { Package, MapPin, ExternalLink, ShieldCheck } from "lucide-react";
+import DryCleaningIcon from "@/components/icons/DryCleaningIcon";
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 
@@ -19,7 +20,7 @@ export default function PickupDeliveryPage() {
   ];
 
   const services: { name: string; icon: React.ReactNode }[] = [
-    { name: "Dry Cleaning", icon: <Shirt className="w-8 h-8" /> },
+    { name: "Dry Cleaning", icon: <DryCleaningIcon className="w-8 h-8" /> },
     { name: "Wash & Fold", icon: "🧺" },
     { name: "Stain Removal", icon: "✨" },
     { name: "Alterations", icon: "🪡" },

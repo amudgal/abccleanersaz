@@ -1,7 +1,8 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import Image from "next/image";
-import { Sparkles, Package, Scissors, Clock, Home, Droplet, Building2, Star, Truck, Clock3, Car, Gift, Shirt } from "lucide-react";
+import { Sparkles, Package, Scissors, Clock, Home, Droplet, Building2, Star, Truck, Clock3, Car, Gift } from "lucide-react";
+import DryCleaningIcon from "@/components/icons/DryCleaningIcon";
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
@@ -14,7 +15,7 @@ export const metadata: Metadata = {
 
 export default function ServicesPage() {
   const mainServices = [
-    { icon: <Shirt className="w-8 h-8" />, id: "dry-cleaning", title: "Dry Cleaning", description: "Premium care for delicate fabrics, formal wear, and specialty garments. We use advanced techniques to preserve the quality and longevity of your clothing.", features: ["Eco-friendly solvents", "Hand finishing", "Expert pressing", "Fabric protection"], badge: "Most Popular" },
+    { icon: <DryCleaningIcon className="w-8 h-8" />, id: "dry-cleaning", title: "Dry Cleaning", description: "Premium care for delicate fabrics, formal wear, and specialty garments. We use advanced techniques to preserve the quality and longevity of your clothing.", features: ["Eco-friendly solvents", "Hand finishing", "Expert pressing", "Fabric protection"], badge: "Most Popular" },
     { icon: <Package className="w-8 h-8" />, id: "wash-fold", title: "Wash & Fold Laundry", description: "Save time with our professional wash and fold service. Your clothes are cleaned, dried, and expertly folded to perfection.", features: ["Sorted by preference", "Premium detergent", "Soft & fresh", "Neatly packaged"] },
     { icon: <Droplet className="w-8 h-8" />, id: "stain-removal", title: "Stain Removal", description: "From wine to ink, our experts are trained to tackle even the toughest stains with care and precision.", features: ["Advanced techniques", "Safe for fabrics", "Multiple treatments", "Satisfaction guaranteed"] },
     { icon: <Scissors className="w-8 h-8" />, id: "alterations", title: "Repairs & Alterations", description: "Minor mends or major adjustments—we provide expert tailoring services to ensure the perfect fit and finish.", features: ["Professional tailoring", "Hem adjustments", "Button replacement", "Zipper repair"] },
