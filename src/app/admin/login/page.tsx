@@ -69,23 +69,8 @@ export default function AdminLoginPage() {
           {choice === null && (
             <div className="space-y-3">
               <p className="text-center text-sm text-gray-500 mb-4">
-                Choose how you&apos;d like to sign in
+                Choose your location to sign in
               </p>
-
-              <Button
-                onClick={() => setChoice("admin")}
-                className="w-full h-auto py-4 bg-gradient-to-r from-[#1e4a7a] to-[#2b7fb5] hover:from-[#163a62] hover:to-[#236a9b] text-white"
-              >
-                <div className="flex items-center gap-3 w-full">
-                  <ShieldCheck className="w-6 h-6 flex-shrink-0" />
-                  <div className="text-left">
-                    <div className="font-semibold">Admin</div>
-                    <div className="text-xs text-blue-200 font-normal">
-                      Manage the ABC Cleaners dashboard
-                    </div>
-                  </div>
-                </div>
-              </Button>
 
               <a
                 href="https://norterracleaners.smrtapp.com/custx/login"
@@ -93,20 +78,19 @@ export default function AdminLoginPage() {
                 className="block"
               >
                 <Button
-                  variant="outline"
-                  className="w-full h-auto py-4 border-2 hover:border-[#2b7fb5] hover:bg-blue-50 transition-all"
+                  className="w-full h-auto py-4 bg-gradient-to-r from-[#1e4a7a] to-[#2b7fb5] hover:from-[#163a62] hover:to-[#236a9b] text-white"
                 >
                   <div className="flex items-center gap-3 w-full">
-                    <MapPin className="w-6 h-6 text-[#2b7fb5] flex-shrink-0" />
+                    <MapPin className="w-6 h-6 flex-shrink-0" />
                     <div className="text-left flex-1">
-                      <div className="font-semibold text-gray-900">
+                      <div className="font-semibold">
                         ABC Cleaners @ North Phoenix
                       </div>
-                      <div className="text-xs text-gray-500 font-normal">
+                      <div className="text-xs text-blue-200 font-normal">
                         Customer portal — Norterra / Pinnacle Peak
                       </div>
                     </div>
-                    <ExternalLink className="w-4 h-4 text-gray-400 flex-shrink-0" />
+                    <ExternalLink className="w-4 h-4 text-blue-200 flex-shrink-0" />
                   </div>
                 </Button>
               </a>
@@ -117,23 +101,32 @@ export default function AdminLoginPage() {
                 className="block"
               >
                 <Button
-                  variant="outline"
-                  className="w-full h-auto py-4 border-2 hover:border-[#2b7fb5] hover:bg-blue-50 transition-all"
+                  className="w-full h-auto py-4 bg-gradient-to-r from-[#1e4a7a] to-[#2b7fb5] hover:from-[#163a62] hover:to-[#236a9b] text-white"
                 >
                   <div className="flex items-center gap-3 w-full">
-                    <MapPin className="w-6 h-6 text-[#2b7fb5] flex-shrink-0" />
+                    <MapPin className="w-6 h-6 flex-shrink-0" />
                     <div className="text-left flex-1">
-                      <div className="font-semibold text-gray-900">
+                      <div className="font-semibold">
                         ABC Cleaners @ Biltmore
                       </div>
-                      <div className="text-xs text-gray-500 font-normal">
+                      <div className="text-xs text-blue-200 font-normal">
                         Customer portal — Biltmore / 24th Street
                       </div>
                     </div>
-                    <ExternalLink className="w-4 h-4 text-gray-400 flex-shrink-0" />
+                    <ExternalLink className="w-4 h-4 text-blue-200 flex-shrink-0" />
                   </div>
                 </Button>
               </a>
+
+              <div className="pt-4 border-t border-gray-200">
+                <button
+                  onClick={() => setChoice("admin")}
+                  className="w-full flex items-center justify-center gap-2 text-sm text-gray-400 hover:text-gray-600 transition-colors"
+                >
+                  <ShieldCheck className="w-4 h-4" />
+                  Admin Login
+                </button>
+              </div>
             </div>
           )}
 
