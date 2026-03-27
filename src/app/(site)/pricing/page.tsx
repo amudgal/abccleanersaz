@@ -53,9 +53,6 @@ export default async function PricingPage() {
   );
 
   const categories = data.categories;
-  const firstHighlight = categories.findIndex((c) => c.highlight);
-  const highlightCat = firstHighlight >= 0 ? categories[firstHighlight] : null;
-  const rest = categories.filter((_, i) => i !== firstHighlight);
 
   return (
     <div>
@@ -69,31 +66,11 @@ export default async function PricingPage() {
       </section>
 
       <section className="max-w-7xl mx-auto px-4 py-16">
-        {highlightCat && rest.length > 0 ? (
-          <>
-            <div className="grid md:grid-cols-2 gap-8">
-              <PriceTable title={highlightCat.title} items={highlightCat.items} highlight />
-              <div className="space-y-8">
-                {rest.slice(0, 2).map((cat) => (
-                  <PriceTable key={cat.id} title={cat.title} items={cat.items} highlight={cat.highlight} />
-                ))}
-              </div>
-            </div>
-            {rest.length > 2 && (
-              <div className="grid md:grid-cols-2 gap-8 mt-8">
-                {rest.slice(2).map((cat) => (
-                  <PriceTable key={cat.id} title={cat.title} items={cat.items} highlight={cat.highlight} />
-                ))}
-              </div>
-            )}
-          </>
-        ) : (
-          <div className="grid md:grid-cols-2 gap-8">
-            {categories.map((cat) => (
-              <PriceTable key={cat.id} title={cat.title} items={cat.items} highlight={cat.highlight} />
-            ))}
-          </div>
-        )}
+        <div className="grid md:grid-cols-2 gap-8">
+          {categories.map((cat) => (
+            <PriceTable key={cat.id} title={cat.title} items={cat.items} highlight={cat.highlight} />
+          ))}
+        </div>
 
         {/* Pickup & Delivery pricing */}
         <Card className="mt-8 shadow-lg border-2 border-green-200">
