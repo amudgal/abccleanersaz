@@ -8,7 +8,21 @@ const JWT_SECRET = new TextEncoder().encode(
 export async function middleware(request: NextRequest) {
   const { pathname } = request.nextUrl;
 
-  // Only protect /admin/dashboard routes
+  // If already logged in, redirect away from login page to dashboard
+  if (pathname === "/admin/login") {
+    const token = request.cookies.get("admin-token")?.value;
+    if (token) {
+      try {
+        await jwtVerify(token, JWT_SECRET);
+        return NextResponse.redirect(new URL("/admin/dashboard", request.url));
+      } catch {
+        // Token invalid — let them see login page
+      }
+    }
+    return NextResponse.next();
+  }
+
+  // Protect /admin/dashboard routes
   if (pathname.startsWith("/admin/dashboard")) {
     const token = request.cookies.get("admin-token")?.value;
 
@@ -39,5 +53,5 @@ export async function middleware(request: NextRequest) {
 }
 
 export const config = {
-  matcher: ["/admin/dashboard/:path*"],
+  matcher: ["/admin/dashboard/:path*", "/admin/login"],
 };
