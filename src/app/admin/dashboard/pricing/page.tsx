@@ -277,7 +277,8 @@ export default function AdminPricingPage() {
                     <Input
                       value={cat.title}
                       onChange={(e) => updateCategoryTitle(catIndex, e.target.value)}
-                      className="text-lg font-semibold border-none shadow-none px-0 focus-visible:ring-0"
+                      placeholder="Category name"
+                      className="text-lg font-semibold border border-dashed border-gray-300 hover:border-[#2b7fb5] focus:border-solid focus:border-[#2b7fb5] px-2 rounded"
                     />
                   </div>
                   <div className="flex items-center gap-2">
