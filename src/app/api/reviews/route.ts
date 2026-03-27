@@ -37,6 +37,34 @@ interface CachedReview {
   relativeTime: string;
   _key: string;
   _firstSeen: string;
+  _approxTimestamp: number; // approximate epoch ms derived from relativeTime
+}
+
+/** Convert relative time strings like "2 weeks ago", "a month ago" into approximate epoch ms. */
+function parseRelativeTime(rel: string): number {
+  const now = Date.now();
+  if (!rel) return now;
+  const lower = rel.toLowerCase().trim();
+
+  // Match patterns like "2 weeks ago", "a month ago", "an hour ago"
+  const match = lower.match(/^(\d+|a|an)\s+(second|minute|hour|day|week|month|year)s?\s+ago$/);
+  if (!match) return now;
+
+  const rawNum = match[1];
+  const num = (rawNum === "a" || rawNum === "an") ? 1 : parseInt(rawNum, 10);
+  const unit = match[2];
+
+  const ms: Record<string, number> = {
+    second: 1000,
+    minute: 60 * 1000,
+    hour: 60 * 60 * 1000,
+    day: 24 * 60 * 60 * 1000,
+    week: 7 * 24 * 60 * 60 * 1000,
+    month: 30 * 24 * 60 * 60 * 1000,
+    year: 365 * 24 * 60 * 60 * 1000,
+  };
+
+  return now - num * (ms[unit] ?? 0);
 }
 
 interface CachedLocation {
@@ -75,9 +103,9 @@ function mergeReviews(
       seen.set(r._key, r);
     }
   }
-  // Sort by _firstSeen descending (most recently seen first)
+  // Sort by approximate publish time descending (newest reviews first)
   return Array.from(seen.values()).sort(
-    (a, b) => new Date(b._firstSeen).getTime() - new Date(a._firstSeen).getTime()
+    (a, b) => b._approxTimestamp - a._approxTimestamp
   );
 }
 
@@ -151,15 +179,17 @@ async function fetchFromGoogle(
     reviews: (data.reviews ?? []).map((r: GoogleReview) => {
       const author = r.authorAttribution?.displayName ?? "Anonymous";
       const text = r.text?.text ?? r.originalText?.text ?? "";
+      const relativeTime = r.relativePublishTimeDescription ?? "";
       return {
         author,
         authorUrl: r.authorAttribution?.uri ?? "",
         authorPhoto: r.authorAttribution?.photoUri ?? "",
         rating: r.rating ?? 5,
         text,
-        relativeTime: r.relativePublishTimeDescription ?? "",
+        relativeTime,
         _key: reviewKey(author, text),
         _firstSeen: now,
+        _approxTimestamp: parseRelativeTime(relativeTime),
       };
     }),
   };

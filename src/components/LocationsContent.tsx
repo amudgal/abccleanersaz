@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { MapPin, Phone, Clock, Navigation, Star, Car, Package } from "lucide-react";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
@@ -21,8 +21,8 @@ const locations = [
       { icon: <Star className="w-4 h-4" />, text: "VIP Membership Available" },
     ],
     mapUrl: "https://maps.google.com/?q=1930+W+Pinnacle+Peak+Rd+Phoenix+AZ+85027",
-    rating: 4.8,
-    reviews: 127,
+    rating: 0,
+    reviews: 0,
     logo: "/images/ABC@NorthPhoenixLogo.png",
     areas: "Norterra, Happy Valley, Deer Valley, Anthem, New River, Cave Creek",
     embedQuery: "1930+W+Pinnacle+Peak+Rd,+Phoenix,+AZ+85027",
@@ -46,8 +46,8 @@ const locations = [
       { icon: <Star className="w-4 h-4" />, text: "VIP Membership Available" },
     ],
     mapUrl: "https://maps.google.com/?q=3023+N+24th+St+Phoenix+AZ+85016",
-    rating: 4.9,
-    reviews: 94,
+    rating: 0,
+    reviews: 0,
     logo: "/images/ABC@BiltmoreLogo.png",
     areas: "Biltmore, Arcadia, Camelback, Paradise Valley, Central Phoenix, Midtown",
     embedQuery: "3023+N+24th+St,+Phoenix,+AZ+85016",
@@ -58,13 +58,50 @@ const locations = [
 
 export function LocationsContent() {
   const [selectedIndex, setSelectedIndex] = useState(0);
-  const selected = locations[selectedIndex];
+  const [liveRatings, setLiveRatings] = useState<Record<string, { rating: number; reviews: number }>>({});
+
+  useEffect(() => {
+    async function fetchRatings() {
+      try {
+        const [npRes, bmRes] = await Promise.all([
+          fetch("/api/reviews?location=north-phoenix"),
+          fetch("/api/reviews?location=biltmore"),
+        ]);
+        const updates: Record<string, { rating: number; reviews: number }> = {};
+        if (npRes.ok) {
+          const np = await npRes.json();
+          updates["north-phoenix"] = { rating: np.rating, reviews: np.totalReviews };
+        }
+        if (bmRes.ok) {
+          const bm = await bmRes.json();
+          updates["biltmore"] = { rating: bm.rating, reviews: bm.totalReviews };
+        }
+        setLiveRatings(updates);
+      } catch { /* use defaults */ }
+    }
+    fetchRatings();
+  }, []);
+
+  const locationKeys = ["north-phoenix", "biltmore"] as const;
+  const getLocationData = (index: number) => {
+    const loc = locations[index];
+    const live = liveRatings[locationKeys[index]];
+    return {
+      ...loc,
+      rating: live?.rating ?? loc.rating,
+      reviews: live?.reviews ?? loc.reviews,
+    };
+  };
+
+  const selected = getLocationData(selectedIndex);
 
   return (
     <>
       <section className="max-w-7xl mx-auto px-4 py-12">
         <div className="grid md:grid-cols-2 gap-8">
-          {locations.map((location, index) => (
+          {locations.map((_, index) => {
+            const location = getLocationData(index);
+            return (
             <Card
               key={index}
               onClick={() => setSelectedIndex(index)}
@@ -92,7 +129,9 @@ export function LocationsContent() {
                         ))}
                       </div>
                       <span className="text-sm text-blue-100">
-                        {location.rating} ({location.reviews} reviews)
+                        {location.rating > 0
+                          ? `${location.rating} (${location.reviews} reviews)`
+                          : "Loading reviews..."}
                       </span>
                     </div>
                   </div>
@@ -168,7 +207,8 @@ export function LocationsContent() {
                 </div>
               </CardContent>
             </Card>
-          ))}
+          );
+          })}
         </div>
       </section>
 
