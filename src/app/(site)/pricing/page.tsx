@@ -119,6 +119,10 @@ export default async function PricingPage() {
             </div>
           </CardContent>
         </Card>
+
+        <p className="text-center text-sm text-gray-500 mt-6 italic">
+          * Prices may vary based on fabric, design or special care. Environmental fee not included.
+        </p>
       </section>
 
       <section className="bg-gradient-to-r from-[#1e4a7a] to-[#2b7fb5] text-white py-16">
