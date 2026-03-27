@@ -9,7 +9,7 @@ export const metadata: Metadata = {
     template: "%s | ABC Cleaners Phoenix",
   },
   description:
-    "ABC Cleaners (Mr. Care) — Phoenix's trusted dry cleaning & laundry since 1986. Stain removal from $5.99, shirts $3.99, suits $14.99. Free pickup & delivery over $30. Two locations: North Phoenix & Biltmore. Same-day service, eco-friendly, 5-star rated.",
+    "ABC Cleaners (Mr. Care) — Phoenix's trusted dry cleaning & laundry since 1986. Stain removal from $5.99, shirts $3.99, suits $14.99. Pickup & delivery over $30. Two locations: North Phoenix & Biltmore. Same-day service, eco-friendly, 5-star rated.",
   keywords: [
     "dry cleaning Phoenix",
     "laundry service Phoenix AZ",
@@ -35,13 +35,13 @@ export const metadata: Metadata = {
     siteName: "ABC Cleaners",
     title: "ABC Cleaners — Professional Dry Cleaning & Laundry in Phoenix, AZ",
     description:
-      "Trusted for 40+ years. Dry cleaning, stain removal, wash & fold, alterations. Free pickup & delivery. Two Phoenix locations. 5-star rated.",
+      "Trusted for 40+ years. Dry cleaning, stain removal, wash & fold, alterations. Pickup & delivery. Two Phoenix locations. 5-star rated.",
     images: [{ url: "/images/mr-care-logo.png", width: 1200, height: 630, alt: "ABC Cleaners Mr. Care" }],
   },
   twitter: {
     card: "summary_large_image",
     title: "ABC Cleaners — Dry Cleaning & Laundry Phoenix AZ",
-    description: "40+ years trusted. Stain removal from $5.99. Free pickup & delivery. Same-day service.",
+    description: "40+ years trusted. Stain removal from $5.99. Pickup & delivery. Same-day service.",
     images: ["/images/mr-care-logo.png"],
   },
   robots: {

@@ -43,15 +43,15 @@ export function Header() {
       <div className="bg-gradient-to-r from-[#1e4a7a] to-[#2b7fb5] text-white">
         <div className="max-w-7xl mx-auto px-4 py-2 flex flex-wrap justify-between items-center text-sm">
           <div className="flex items-center gap-4">
-            <a href="tel:+16029565271" className="flex items-center gap-1 hover:text-blue-200 transition-colors">
-              <Phone className="w-4 h-4" />
-              <span className="sm:hidden text-xs">North Phoenix</span>
-              <span className="hidden sm:inline">North Phoenix: (602) 956-5271</span>
-            </a>
             <a href="tel:+16232231460" className="flex items-center gap-1 hover:text-blue-200 transition-colors">
               <Phone className="w-4 h-4" />
+              <span className="sm:hidden text-xs">North Phoenix</span>
+              <span className="hidden sm:inline">North Phoenix: (623) 223-1460</span>
+            </a>
+            <a href="tel:+16029565271" className="flex items-center gap-1 hover:text-blue-200 transition-colors">
+              <Phone className="w-4 h-4" />
               <span className="sm:hidden text-xs">Biltmore</span>
-              <span className="hidden sm:inline">Biltmore: (623) 223-1460</span>
+              <span className="hidden sm:inline">Biltmore: (602) 956-5271</span>
             </a>
           </div>
           <div className="hidden md:flex items-center gap-4">

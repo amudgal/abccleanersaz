@@ -6,8 +6,8 @@ import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/com
 import { Button } from "@/components/ui/button";
 
 export const metadata: Metadata = {
-  title: "Pickup & Delivery — Free for Orders Over $30",
-  description: "Schedule free dry cleaning pickup & delivery in Phoenix AZ for orders over $30. 24-48 hour turnaround. Same-day available. Serving Greater Phoenix area. ABC Cleaners.",
+  title: "Pickup & Delivery — For Orders Over $30",
+  description: "Schedule dry cleaning pickup & delivery in Phoenix AZ for orders over $30. 24-48 hour turnaround. Same-day available. Serving Greater Phoenix area. ABC Cleaners.",
   alternates: { canonical: "https://abccleaners.com/pickup-delivery" },
 };
 
@@ -37,7 +37,7 @@ export default function PickupDeliveryPage() {
           </div>
           <h1 className="text-4xl md:text-5xl mb-4">Pickup & Delivery Service</h1>
           <p className="text-xl text-blue-100 max-w-3xl mx-auto">
-            Schedule seamless pickup and delivery at your convenience. Free for orders over $30. We bring premium garment care right to your doorstep.
+            Schedule seamless pickup and delivery at your convenience. Orders over $30. We bring premium garment care right to your doorstep.
           </p>
         </div>
       </section>

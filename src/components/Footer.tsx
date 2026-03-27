@@ -21,13 +21,13 @@ export function Footer() {
                 <p className="font-semibold text-white">ABC CLEANERS AT NORTH PHOENIX</p>
                 <p>1930 W Pinnacle Peak Rd</p>
                 <p>Phoenix, AZ 85027</p>
-                <a href="tel:+16029565271" className="hover:text-white transition-colors">(602) 956-5271</a>
+                <a href="tel:+16232231460" className="hover:text-white transition-colors">(623) 223-1460</a>
               </address>
               <address className="not-italic">
                 <p className="font-semibold text-white">ABC CLEANERS AT BILTMORE</p>
                 <p>3023 N 24th St</p>
                 <p>Phoenix, AZ 85016</p>
-                <a href="tel:+16232231460" className="hover:text-white transition-colors">(623) 223-1460</a>
+                <a href="tel:+16029565271" className="hover:text-white transition-colors">(602) 956-5271</a>
               </address>
             </div>
           </div>

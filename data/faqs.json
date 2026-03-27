@@ -16,7 +16,7 @@
     {
       "id": "pickup-delivery",
       "question": "Do you offer pickup and delivery?",
-      "answer": "Yes! We offer free pickup and delivery on orders over $30. For orders under $30, a $5.99 delivery fee applies. We serve the greater Phoenix area including Norterra, Happy Valley, Deer Valley, Biltmore, Arcadia, and Camelback East. Typical turnaround is 24–48 hours.",
+      "answer": "Yes! We offer pickup and delivery on orders over $30. For orders under $30, a $5.99 delivery fee applies. We serve the greater Phoenix area including Norterra, Happy Valley, Deer Valley, Biltmore, Arcadia, and Camelback East. Typical turnaround is 24–48 hours.",
       "visible": true
     },
     {
@@ -34,7 +34,7 @@
     {
       "id": "same-day",
       "question": "Is same-day dry cleaning available?",
-      "answer": "Yes, same-day service is available for items dropped off before 10:00 AM at either location. Rush service is available on request for an additional fee. Contact us to confirm availability for your specific items.",
+      "answer": "Yes, same-day service is available for items dropped off before 10:00 AM at Biltmore location. Rush service is available on request for an additional fee. Contact us to confirm availability for your specific items.",
       "visible": true
     },
     {

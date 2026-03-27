@@ -5,7 +5,7 @@ export const businessJsonLd = {
   name: "ABC Cleaners",
   alternateName: ["Mr. Care", "ABC Cleaners Phoenix", "Norterra Cleaners"],
   description:
-    "ABC Cleaners (Mr. Care) is a family-owned professional dry cleaning and laundry service in Phoenix, AZ. Trusted for 40+ years with eco-friendly practices, same-day service, and free pickup & delivery.",
+    "ABC Cleaners (Mr. Care) is a family-owned professional dry cleaning and laundry service in Phoenix, AZ. Trusted for 40+ years with eco-friendly practices, same-day service, and pickup & delivery.",
   url: "https://abccleaners.com",
   logo: "https://abccleaners.com/images/mr-care-logo.png",
   image: "https://abccleaners.com/images/mr-care-logo.png",
@@ -103,10 +103,10 @@ export const locationsJsonLd = [
     "@id": "https://abccleaners.com/#north-phoenix",
     name: "ABC Cleaners at North Phoenix",
     description:
-      "Professional dry cleaning and laundry at North Phoenix. VIP membership and free pickup & delivery.",
+      "Professional dry cleaning and laundry at North Phoenix. VIP membership and pickup & delivery.",
     url: "https://abccleaners.com/locations",
     image: "https://abccleaners.com/images/ABC@NorthPhoenixLogo.png",
-    telephone: "+16029565271",
+    telephone: "+16232231460",
     address: {
       "@type": "PostalAddress",
       streetAddress: "1930 W Pinnacle Peak Rd",
@@ -147,10 +147,10 @@ export const locationsJsonLd = [
     "@id": "https://abccleaners.com/#biltmore",
     name: "ABC Cleaners at Biltmore",
     description:
-      "Professional dry cleaning and laundry near Biltmore Phoenix. Drive-thru, 24-hour drop box, VIP membership, and free pickup & delivery.",
+      "Professional dry cleaning and laundry near Biltmore Phoenix. Drive-thru, 24-hour drop box, VIP membership, and pickup & delivery.",
     url: "https://abccleaners.com/locations",
     image: "https://abccleaners.com/images/ABC@BiltmoreLogo.png",
-    telephone: "+16232231460",
+    telephone: "+16029565271",
     address: {
       "@type": "PostalAddress",
       streetAddress: "3023 N 24th St",
@@ -196,7 +196,7 @@ export const faqJsonLd = {
       name: "I got a stain on my shirt. Can ABC Cleaners help?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "Yes! ABC Cleaners specializes in professional stain removal for all fabric types including wine, ink, grease, oil, blood, coffee, grass, paint, and makeup stains. Prices start at $5.99 per garment. Visit us at 1930 W Pinnacle Peak Rd (North Phoenix) or 3023 N 24th St (Biltmore), or schedule a free pickup and delivery for orders over $30.",
+        text: "Yes! ABC Cleaners specializes in professional stain removal for all fabric types including wine, ink, grease, oil, blood, coffee, grass, paint, and makeup stains. Prices start at $5.99 per garment. Visit us at 1930 W Pinnacle Peak Rd (North Phoenix) or 3023 N 24th St (Biltmore), or schedule a pickup and delivery for orders over $30.",
       },
     },
     {
@@ -212,7 +212,7 @@ export const faqJsonLd = {
       name: "Does ABC Cleaners offer pickup and delivery?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "Yes! We offer free pickup and delivery for orders over $30 throughout the Greater Phoenix metropolitan area. For orders under $30, there is a $5.99 delivery fee. Schedule online or call North Phoenix at (602) 956-5271 or Biltmore at (623) 223-1460.",
+        text: "Yes! We offer pickup and delivery for orders over $30 throughout the Greater Phoenix metropolitan area. For orders under $30, there is a $5.99 delivery fee. Schedule online or call North Phoenix at (602) 956-5271 or Biltmore at (623) 223-1460.",
       },
     },
     {
@@ -244,7 +244,7 @@ export const faqJsonLd = {
       name: "Does ABC Cleaners offer same-day dry cleaning?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "Yes! Same-day service is available at both locations. Drop off your items before 9 AM and pick them up the same evening. Express wash & fold service is also available at $3.49/lb.",
+        text: "Yes! Same-day service is available at Biltmore location. Drop off your items before 9 AM and pick them up the same evening. Express wash & fold service is also available at $3.49/lb.",
       },
     },
     {

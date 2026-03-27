@@ -24,8 +24,8 @@ export default function ServicesPage() {
   ];
 
   const convenienceServices = [
-    { icon: <Truck className="w-6 h-6" />, title: "Pickup & Delivery", description: "Free pickup and delivery for orders $30+. Schedule online and track your order." },
-    { icon: <Clock className="w-6 h-6" />, title: "Same-Day Service", description: "Drop off before 9 AM and pick up the same evening at both locations.", badge: "Both Locations" },
+    { icon: <Truck className="w-6 h-6" />, title: "Pickup & Delivery", description: "Pickup and delivery for orders $30+. Schedule online and track your order." },
+    { icon: <Clock className="w-6 h-6" />, title: "Same-Day Service", description: "Drop off before 9 AM and pick up the same evening at Biltmore location.", badge: "Biltmore Location" },
     { icon: <Clock3 className="w-6 h-6" />, title: "24-Hour Drop Box", description: "Drop off your items at any time using our secure, around-the-clock drop-off box." },
     { icon: <Car className="w-6 h-6" />, title: "Drive-Thru Service", description: "Quick and convenient—stay in your car while we take care of your garments.", badge: "Biltmore Location" },
     { icon: <Star className="w-6 h-6" />, title: "VIP Membership", description: "Enjoy exclusive benefits like priority service, special discounts, and loyalty rewards." },

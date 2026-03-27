@@ -7,7 +7,7 @@ import { readJsonFile, PricingData } from "@/lib/data";
 
 export const metadata: Metadata = {
   title: "Pricing — Dry Cleaning, Laundry & Stain Removal Prices",
-  description: "ABC Cleaners Phoenix pricing: Dress shirts $3.99, suits $14.99, wash & fold $2.49/lb, stain removal from $5.99. Free pickup & delivery over $30. Affordable professional garment care.",
+  description: "ABC Cleaners Phoenix pricing: Dress shirts $3.99, suits $14.99, wash & fold $2.49/lb, stain removal from $5.99. Pickup & delivery. Affordable professional garment care.",
   alternates: { canonical: "https://abccleaners.com/pricing" },
 };
 
@@ -99,13 +99,13 @@ export default async function PricingPage() {
         <Card className="mt-8 shadow-lg border-2 border-green-200">
           <CardHeader>
             <CardTitle className="text-xl flex items-center gap-2">
-              Pickup & Delivery <Badge className="bg-green-500">Free Over $30</Badge>
+              Pickup & Delivery <Badge className="bg-green-500">Orders Over $30</Badge>
             </CardTitle>
           </CardHeader>
           <CardContent>
             <div className="grid md:grid-cols-3 gap-6">
               <div className="text-center p-4">
-                <p className="text-3xl font-bold text-green-600">FREE</p>
+                <p className="text-3xl font-bold text-green-600"></p>
                 <p className="text-gray-600 mt-1">Orders over $30</p>
               </div>
               <div className="text-center p-4">

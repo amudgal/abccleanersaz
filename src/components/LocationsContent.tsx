@@ -10,8 +10,8 @@ const locations = [
     name: "ABC CLEANERS AT NORTH PHOENIX",
     address: "1930 W Pinnacle Peak Rd",
     city: "Phoenix, AZ 85027",
-    phone: "+16029565271",
-    phoneDisplay: "(602) 956-5271",
+    phone: "+16232231460",
+    phoneDisplay: "(623) 223-1460",
     hours: [
       { days: "Monday - Friday", time: "7:00 AM - 6:30 PM" },
       { days: "Saturday", time: "8:00 AM - 3:00 PM" },
@@ -33,8 +33,8 @@ const locations = [
     name: "ABC CLEANERS AT BILTMORE",
     address: "3023 N 24th St",
     city: "Phoenix, AZ 85016",
-    phone: "+16232231460",
-    phoneDisplay: "(623) 223-1460",
+    phone: "+16029565271",
+    phoneDisplay: "(602) 956-5271",
     hours: [
       { days: "Monday - Friday", time: "7:00 AM - 6:30 PM" },
       { days: "Saturday", time: "8:00 AM - 5:00 PM" },

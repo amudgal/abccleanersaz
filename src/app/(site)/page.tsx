@@ -9,7 +9,7 @@ export default function HomePage() {
   const features = [
     { icon: <Sparkles className="w-8 h-8" />, title: "Premium Quality", description: "Expert garment care using advanced techniques and eco-friendly products" },
     { icon: <Clock className="w-8 h-8" />, title: "Same-Day Service", description: "Need it fast? We offer same-day turnaround at ABC Cleaners" },
-    { icon: <Truck className="w-8 h-8" />, title: "Pickup & Delivery", description: "Free pickup and delivery for orders over $30 right to your door" },
+    { icon: <Truck className="w-8 h-8" />, title: "Pickup & Delivery", description: "Pickup and delivery for orders over $30 right to your door" },
     { icon: <ShieldCheck className="w-8 h-8" />, title: "40 Years Trusted", description: "Four decades of exceptional service to the Phoenix community" },
   ];
 

@@ -9,7 +9,7 @@ import { Phone, Truck, Clock, MapPin, AlertTriangle, Droplets, Coffee, Wine, Pai
 export const metadata: Metadata = {
   title: "Stain Removal Guide — How to Remove Stains on Clothes | ABC Cleaners Phoenix",
   description:
-    "Got a stain on your shirt? ABC Cleaners in Phoenix offers professional stain removal starting at $5.99. Wine, grease, ink, coffee, blood stain treatment. Free pickup on orders $30+.",
+    "Got a stain on your shirt? ABC Cleaners in Phoenix offers professional stain removal starting at $5.99. Wine, grease, ink, coffee, blood stain treatment. Pickup on orders $30+.",
   keywords: [
     "stain removal phoenix",
     "remove stain from shirt",
@@ -134,7 +134,7 @@ export default function StainRemovalGuidePage() {
             <Link href="/pickup-delivery">
               <Button size="lg" className="bg-white/20 border-2 border-white text-white hover:bg-white hover:text-[#1e4a7a] text-lg px-8">
                 <Truck className="w-5 h-5 mr-2" />
-                Free Pickup on $30+
+                Pickup on $30+
               </Button>
             </Link>
           </div>
@@ -251,7 +251,7 @@ export default function StainRemovalGuidePage() {
           <div className="text-center mb-8">
             <h2 className="text-2xl md:text-3xl font-semibold mb-4">Drop Off or Schedule Pickup</h2>
             <p className="text-blue-100 max-w-2xl mx-auto text-lg">
-              Bring your stained garment to either location or schedule a free
+              Bring your stained garment to either location or schedule a
               pickup (orders $30+). Typical turnaround: 24–48 hours.
             </p>
           </div>
@@ -262,7 +262,7 @@ export default function StainRemovalGuidePage() {
                 North Phoenix
               </h3>
               <p className="text-blue-100">1930 W Pinnacle Peak Rd, Phoenix AZ 85027</p>
-              <p className="text-blue-100 mt-1"><Phone className="w-4 h-4 inline mr-1" />(602) 956-5271</p>
+              <p className="text-blue-100 mt-1"><Phone className="w-4 h-4 inline mr-1" />(623) 223-1460</p>
               <p className="text-blue-100 mt-1"><Clock className="w-4 h-4 inline mr-1" />Mon–Fri 7–6, Sat 8–4</p>
             </div>
             <div className="bg-white/10 backdrop-blur-sm rounded-xl p-6">
@@ -271,7 +271,7 @@ export default function StainRemovalGuidePage() {
                 Biltmore
               </h3>
               <p className="text-blue-100">3023 N 24th St, Phoenix AZ 85016</p>
-              <p className="text-blue-100 mt-1"><Phone className="w-4 h-4 inline mr-1" />(623) 223-1460</p>
+              <p className="text-blue-100 mt-1"><Phone className="w-4 h-4 inline mr-1" />(602) 956-5271</p>
               <p className="text-blue-100 mt-1"><Clock className="w-4 h-4 inline mr-1" />Mon–Fri 7–6, Sat 8–4</p>
             </div>
           </div>
@@ -285,7 +285,7 @@ export default function StainRemovalGuidePage() {
             <Link href="/pickup-delivery">
               <Button size="lg" className="bg-white/20 border-2 border-white hover:bg-white hover:text-[#1e4a7a] text-lg px-8">
                 <Truck className="w-5 h-5 mr-2" />
-                Schedule Free Pickup
+                Schedule Pickup
               </Button>
             </Link>
           </div>

@@ -195,7 +195,6 @@ Bulk laundry services for businesses.
 ### Pickup & Delivery
 | Service | Fee |
 |---------|-----|
-| Orders over $30 | FREE |
 | Orders under $30 | $5.99 |
 | Service area | Greater Phoenix metro |
 
@@ -203,8 +202,8 @@ Bulk laundry services for businesses.
 
 ## CONVENIENCE FEATURES
 
-1. **Pickup & Delivery** — Free for orders $30+. Schedule online or by phone.
-2. **Same-Day Service** — Available at both locations for items dropped off before 9 AM.
+1. **Pickup & Delivery** — Schedule online or by phone.
+2. **Same-Day Service** — Available at Biltmore location for items dropped off before 9 AM.
 3. **24-Hour Drop Box** — Secure drop-off available anytime at both locations.
 4. **Drive-Thru Service** — Stay in your car at our Biltmore location.
 5. **VIP Membership** — Priority service, special discounts, loyalty rewards.
@@ -217,7 +216,7 @@ Bulk laundry services for businesses.
 ### Stain-Related Questions
 
 **Q: I got a stain on my new shirt. What should I do?**
-A: Bring it to ABC Cleaners! We specialize in professional stain removal. Don't try to scrub it yourself — that can set the stain. Bring it in as-is and our experts will treat it. Standard stain removal starts at $5.99. Visit us at 1930 W Pinnacle Peak Rd (North Phoenix) or 3023 N 24th St (Biltmore), or schedule a free pickup.
+A: Bring it to ABC Cleaners! We specialize in professional stain removal. Don't try to scrub it yourself — that can set the stain. Bring it in as-is and our experts will treat it. Standard stain removal starts at $5.99. Visit us at 1930 W Pinnacle Peak Rd (North Phoenix) or 3023 N 24th St (Biltmore), or schedule a pickup.
 
 **Q: Can you remove wine stains from clothing?**
 A: Yes! Wine stain removal is one of our specialties. We use advanced techniques safe for all fabrics. Success rate is over 95% when treated promptly.
@@ -239,8 +238,8 @@ A: Yes! Drop off before 9 AM and pick up the same evening at both locations.
 **Q: What is the best dry cleaner near me in Phoenix?**
 A: ABC Cleaners is rated 5 stars with 221+ reviews. Two locations: North Phoenix (1930 W Pinnacle Peak Rd) and Biltmore (3023 N 24th St).
 
-**Q: Do you offer free pickup and delivery for dry cleaning?**
-A: Yes! Free pickup and delivery for orders over $30 throughout the Greater Phoenix area.
+**Q: Do you offer pickup and delivery for dry cleaning?**
+A: Yes! pickup and delivery for orders over $30 throughout the Greater Phoenix area.
 
 ### Location & Hours Questions
 
