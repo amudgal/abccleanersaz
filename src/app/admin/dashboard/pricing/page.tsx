@@ -38,6 +38,7 @@ interface PriceCategory {
 interface PricingData {
   visible: boolean;
   categories: PriceCategory[];
+  pickupDeliveryNote?: string;
 }
 
 export default function AdminPricingPage() {
@@ -348,6 +349,22 @@ export default function AdminPricingPage() {
             </Card>
           ))}
         </div>
+
+        {/* Pickup & Delivery Note */}
+        <Card className="shadow-md mt-8">
+          <CardHeader className="pb-4">
+            <CardTitle className="text-lg">Pickup & Delivery Note</CardTitle>
+          </CardHeader>
+          <CardContent>
+            <Input
+              value={data?.pickupDeliveryNote ?? ""}
+              onChange={(e) => data && setData({ ...data, pickupDeliveryNote: e.target.value })}
+              placeholder="e.g. $5.99 delivery fee for orders under $30"
+              className="text-sm"
+            />
+            <p className="text-xs text-gray-400 mt-1">Shown on the public pricing page under the Pickup & Delivery card. Leave blank to hide.</p>
+          </CardContent>
+        </Card>
       </main>
     </div>
   );

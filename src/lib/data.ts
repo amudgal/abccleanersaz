@@ -76,6 +76,7 @@ export interface PriceCategory {
 export interface PricingData {
   visible: boolean;
   categories: PriceCategory[];
+  pickupDeliveryNote?: string;
 }
 
 export interface FaqItem {

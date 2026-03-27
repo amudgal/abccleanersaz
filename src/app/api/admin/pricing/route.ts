@@ -55,6 +55,7 @@ export async function PUT(req: NextRequest) {
     const data: PricingData = {
       visible: body.visible,
       categories: body.categories,
+      pickupDeliveryNote: typeof body.pickupDeliveryNote === "string" ? body.pickupDeliveryNote : undefined,
     };
 
     await writeJsonFile("pricing.json", data);

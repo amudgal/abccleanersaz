@@ -80,20 +80,19 @@ export default async function PricingPage() {
             </CardTitle>
           </CardHeader>
           <CardContent>
-            <div className="grid md:grid-cols-3 gap-6">
+            <div className="grid md:grid-cols-2 gap-6">
               <div className="text-center p-4">
-                <p className="text-3xl font-bold text-green-600"></p>
+                <p className="text-3xl font-bold text-green-600">FREE</p>
                 <p className="text-gray-600 mt-1">Orders over $30</p>
-              </div>
-              <div className="text-center p-4">
-                <p className="text-3xl font-bold text-[#1e4a7a]">$5.99</p>
-                <p className="text-gray-600 mt-1">Orders under $30</p>
               </div>
               <div className="text-center p-4">
                 <p className="text-3xl font-bold text-[#2b7fb5]">24-48 hrs</p>
                 <p className="text-gray-600 mt-1">Typical turnaround</p>
               </div>
             </div>
+            {data.pickupDeliveryNote && (
+              <p className="text-center text-sm text-gray-600 mt-4 border-t pt-4">{data.pickupDeliveryNote}</p>
+            )}
           </CardContent>
         </Card>
 
