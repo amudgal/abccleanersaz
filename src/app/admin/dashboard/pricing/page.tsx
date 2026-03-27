@@ -16,10 +16,11 @@ import {
   Trash2,
   Eye,
   EyeOff,
-  GripVertical,
   AlertCircle,
   CheckCircle2,
   Home,
+  ChevronUp,
+  ChevronDown,
 } from "lucide-react";
 
 interface PriceItem {
@@ -126,6 +127,17 @@ export default function AdminPricingPage() {
     const updated = { ...data };
     updated.categories = [...updated.categories];
     updated.categories[catIndex] = { ...updated.categories[catIndex], title };
+    setData(updated);
+  }
+
+  function moveCategory(fromIndex: number, direction: "up" | "down") {
+    if (!data) return;
+    const toIndex = direction === "up" ? fromIndex - 1 : fromIndex + 1;
+    if (toIndex < 0 || toIndex >= data.categories.length) return;
+    const updated = { ...data };
+    const cats = [...updated.categories];
+    [cats[fromIndex], cats[toIndex]] = [cats[toIndex], cats[fromIndex]];
+    updated.categories = cats;
     setData(updated);
   }
 
@@ -244,7 +256,24 @@ export default function AdminPricingPage() {
               <CardHeader className="pb-4">
                 <div className="flex items-center justify-between">
                   <div className="flex items-center gap-3 flex-1">
-                    <GripVertical className="w-5 h-5 text-gray-300" />
+                    <div className="flex flex-col">
+                      <button
+                        onClick={() => moveCategory(catIndex, "up")}
+                        disabled={catIndex === 0}
+                        className="p-0.5 text-gray-400 hover:text-gray-700 disabled:opacity-20 disabled:cursor-not-allowed"
+                        title="Move up"
+                      >
+                        <ChevronUp className="w-4 h-4" />
+                      </button>
+                      <button
+                        onClick={() => moveCategory(catIndex, "down")}
+                        disabled={catIndex === (data?.categories.length ?? 0) - 1}
+                        className="p-0.5 text-gray-400 hover:text-gray-700 disabled:opacity-20 disabled:cursor-not-allowed"
+                        title="Move down"
+                      >
+                        <ChevronDown className="w-4 h-4" />
+                      </button>
+                    </div>
                     <Input
                       value={cat.title}
                       onChange={(e) => updateCategoryTitle(catIndex, e.target.value)}
