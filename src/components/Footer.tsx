@@ -53,10 +53,7 @@ export function Footer() {
               <Link href="/for-business" className="hover:text-white transition-colors">For Business</Link>
               <Link href="/faq" className="hover:text-white transition-colors">Common Questions</Link>
             </nav>
-            <div className="mt-4">
-              <p className="text-sm text-blue-100">Hours: Mon-Fri 7AM-6PM</p>
-              <p className="text-sm text-blue-100">Sat 8AM-4PM · Sun Closed</p>
-            </div>
+            
           </div>
         </div>
 
