@@ -24,7 +24,7 @@ const locations = [
     rating: 0,
     reviews: 0,
     logo: "/images/ABC@NorthPhoenixLogo.png",
-    areas: "Norterra, Happy Valley, Deer Valley, Anthem, New River, Cave Creek",
+    areas: "Norterra, Happy Valley, Deer Valley, Anthem, New River, Cave Creek, Deem Hills, Stetson Hills",
     embedQuery: "1930+W+Pinnacle+Peak+Rd,+Phoenix,+AZ+85027",
     lat: 33.7051,
     lng: -112.1016,
