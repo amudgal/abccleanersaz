@@ -27,7 +27,7 @@ Allow: /
 User-agent: Applebot-Extended
 Allow: /
 
-Sitemap: https://abccleaners.com/sitemap.xml
+Sitemap: https://www.abccleanersaz.com/sitemap.xml
 
 # LLM-readable content
 # See /llms.txt for a summary

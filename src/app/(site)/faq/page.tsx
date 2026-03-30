@@ -8,7 +8,7 @@ export const metadata: Metadata = {
   title: "FAQ — Frequently Asked Questions About Our Dry Cleaning Services",
   description:
     "Find answers about ABC Cleaners: pricing, stain removal, pickup & delivery, hours, locations in Phoenix AZ, eco-friendly cleaning, same-day service, and more.",
-  alternates: { canonical: "https://abccleaners.com/faq" },
+  alternates: { canonical: "https://www.abccleanersaz.com/faq" },
 };
 
 export const dynamic = "force-dynamic";

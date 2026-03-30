@@ -8,7 +8,7 @@ import { readJsonFile, PricingData } from "@/lib/data";
 export const metadata: Metadata = {
   title: "Pricing — Dry Cleaning, Laundry & Stain Removal Prices",
   description: "ABC Cleaners Phoenix pricing: Dress shirts $3.99, suits $14.99, wash & fold $2.49/lb, stain removal from $5.99. Pickup & delivery. Affordable professional garment care.",
-  alternates: { canonical: "https://abccleaners.com/pricing" },
+  alternates: { canonical: "https://www.abccleanersaz.com/pricing" },
 };
 
 export const dynamic = "force-dynamic";

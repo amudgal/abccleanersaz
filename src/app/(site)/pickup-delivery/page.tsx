@@ -8,7 +8,7 @@ import { Button } from "@/components/ui/button";
 export const metadata: Metadata = {
   title: "Pickup & Delivery — For Orders Over $30",
   description: "Schedule dry cleaning pickup & delivery in Phoenix AZ for orders over $30. 24-48 hour turnaround. Same-day available. Serving Greater Phoenix area. ABC Cleaners.",
-  alternates: { canonical: "https://abccleaners.com/pickup-delivery" },
+  alternates: { canonical: "https://www.abccleanersaz.com/pickup-delivery" },
 };
 
 export default function PickupDeliveryPage() {

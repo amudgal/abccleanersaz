@@ -5,7 +5,7 @@ import { LocationsContent } from "@/components/LocationsContent";
 export const metadata: Metadata = {
   title: "Locations — North Phoenix & Biltmore",
   description: "ABC Cleaners has two Phoenix locations: North Phoenix at 1930 W Pinnacle Peak Rd (623-223-1460) and Biltmore at 3023 N 24th St (602-956-5271). Mon-Fri 7AM-6PM, Sat 8AM-4PM. Drive-thru & 24hr drop box.",
-  alternates: { canonical: "https://abccleaners.com/locations" },
+  alternates: { canonical: "https://www.abccleanersaz.com/locations" },
 };
 
 export default function LocationsPage() {

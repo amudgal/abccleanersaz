@@ -1,14 +1,14 @@
 export const businessJsonLd = {
   "@context": "https://schema.org",
   "@type": "DryCleaningOrLaundry",
-  "@id": "https://abccleaners.com/#organization",
+  "@id": "https://www.abccleanersaz.com/#organization",
   name: "ABC Cleaners",
   alternateName: ["Mr. Care", "ABC Cleaners Phoenix", "Norterra Cleaners"],
   description:
     "ABC Cleaners (Mr. Care) is a family-owned professional dry cleaning and laundry service in Phoenix, AZ. Trusted for 40+ years with eco-friendly practices, same-day service, and pickup & delivery.",
-  url: "https://abccleaners.com",
-  logo: "https://abccleaners.com/images/mr-care-logo.png",
-  image: "https://abccleaners.com/images/mr-care-logo.png",
+  url: "https://www.abccleanersaz.com",
+  logo: "https://www.abccleanersaz.com/images/mr-care-logo.png",
+  image: "https://www.abccleanersaz.com/images/mr-care-logo.png",
   telephone: "+16029565271",
   foundingDate: "1986",
   priceRange: "$$",
@@ -100,12 +100,12 @@ export const locationsJsonLd = [
   {
     "@context": "https://schema.org",
     "@type": "DryCleaningOrLaundry",
-    "@id": "https://abccleaners.com/#north-phoenix",
+    "@id": "https://www.abccleanersaz.com/#north-phoenix",
     name: "ABC Cleaners at North Phoenix",
     description:
       "Professional dry cleaning and laundry at North Phoenix. VIP membership and pickup & delivery.",
-    url: "https://abccleaners.com/locations",
-    image: "https://abccleaners.com/images/ABC@NorthPhoenixLogo.png",
+    url: "https://www.abccleanersaz.com/locations",
+    image: "https://www.abccleanersaz.com/images/ABC@NorthPhoenixLogo.png",
     telephone: "+16232231460",
     address: {
       "@type": "PostalAddress",
@@ -139,17 +139,17 @@ export const locationsJsonLd = [
       ratingValue: "4.8",
       reviewCount: "127",
     },
-    parentOrganization: { "@id": "https://abccleaners.com/#organization" },
+    parentOrganization: { "@id": "https://www.abccleanersaz.com/#organization" },
   },
   {
     "@context": "https://schema.org",
     "@type": "DryCleaningOrLaundry",
-    "@id": "https://abccleaners.com/#biltmore",
+    "@id": "https://www.abccleanersaz.com/#biltmore",
     name: "ABC Cleaners at Biltmore",
     description:
       "Professional dry cleaning and laundry near Biltmore Phoenix. Drive-thru, 24-hour drop box, VIP membership, and pickup & delivery.",
-    url: "https://abccleaners.com/locations",
-    image: "https://abccleaners.com/images/ABC@BiltmoreLogo.png",
+    url: "https://www.abccleanersaz.com/locations",
+    image: "https://www.abccleanersaz.com/images/ABC@BiltmoreLogo.png",
     telephone: "+16029565271",
     address: {
       "@type": "PostalAddress",
@@ -183,7 +183,7 @@ export const locationsJsonLd = [
       ratingValue: "4.9",
       reviewCount: "94",
     },
-    parentOrganization: { "@id": "https://abccleaners.com/#organization" },
+    parentOrganization: { "@id": "https://www.abccleanersaz.com/#organization" },
   },
 ];
 

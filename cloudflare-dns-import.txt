@@ -1,0 +1,13 @@
+;; BIND Zone File for abccleanersaz.com
+;; Import into Cloudflare → DNS → Records → Import DNS Records
+;;
+;; IMPORTANT: After importing, ensure:
+;;   - www record is set to DNS-only (grey cloud)
+;;   - @ record is set to Proxied (orange cloud)
+;;   - ACM validation record is set to DNS-only (grey cloud)
+
+;; ACM Certificate Validation (for AWS Amplify SSL)
+_489a0f0d3fe42e7b2f321db7a631f994.abccleanersaz.com. 300 IN CNAME _ff3f384dd27a9782f8562034d92acf8e.jkddzztszm.acm-validations.aws.
+
+;; www subdomain — add this FIRST, keep DNS-only (grey cloud)
+www.abccleanersaz.com. 300 IN CNAME d151xy118u6fp6.cloudfront.net.

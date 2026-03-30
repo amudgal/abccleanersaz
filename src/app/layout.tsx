@@ -3,7 +3,7 @@ import "./globals.css";
 import { businessJsonLd, locationsJsonLd } from "@/lib/structured-data";
 
 export const metadata: Metadata = {
-  metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL || "https://abccleaners.com"),
+  metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL || "https://www.abccleanersaz.com"),
   title: {
     default: "ABC Cleaners — Professional Dry Cleaning & Laundry in Phoenix, AZ | Mr. Care",
     template: "%s | ABC Cleaners Phoenix",
@@ -31,7 +31,7 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     locale: "en_US",
-    url: "https://abccleaners.com",
+    url: "https://www.abccleanersaz.com",
     siteName: "ABC Cleaners",
     title: "ABC Cleaners — Professional Dry Cleaning & Laundry in Phoenix, AZ",
     description:
@@ -49,7 +49,7 @@ export const metadata: Metadata = {
     follow: true,
     googleBot: { index: true, follow: true, "max-video-preview": -1, "max-image-preview": "large", "max-snippet": -1 },
   },
-  alternates: { canonical: "https://abccleaners.com" },
+  alternates: { canonical: "https://www.abccleanersaz.com" },
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {

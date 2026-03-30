@@ -14,10 +14,10 @@ AWS Amplify natively supports Next.js (SSR, API routes, middleware). This is the
 
 | Variable | Description | Example |
 |---|---|---|
-| `ADMIN_EMAIL` | Admin login email | `admin@abccleaners.com` |
+| `ADMIN_EMAIL` | Admin login email | `admin@abccleanersaz.com` |
 | `ADMIN_PASSWORD_HASH` | bcrypt hash of admin password | `$2a$12$...` (generate with `npx bcryptjs-cli hash yourpassword`) |
 | `JWT_SECRET` | Random 32+ char string for JWT signing | `abc-cleaners-jwt-secret-change-me` |
-| `NEXT_PUBLIC_SITE_URL` | Production URL | `https://abccleaners.com` |
+| `NEXT_PUBLIC_SITE_URL` | Production URL | `https://www.abccleanersaz.com` |
 
 6. **Deploy** — Amplify builds and deploys automatically
 
@@ -33,9 +33,10 @@ Copy the output (starts with `$2a$` or `$2b$`) into the `ADMIN_PASSWORD_HASH` en
 ### Custom Domain
 
 1. In Amplify Console → Domain Management → Add Domain
-2. Enter `abccleaners.com`
-3. Follow DNS verification steps
-4. Amplify provisions SSL certificate automatically
+2. Enter `abccleanersaz.com`
+3. Configure subdomains: `www` → main branch
+4. Follow DNS verification steps
+5. Amplify provisions SSL certificate automatically
 
 ## Alternative: AWS App Runner + ECR
 

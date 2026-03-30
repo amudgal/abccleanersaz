@@ -10,7 +10,7 @@ import { Badge } from "@/components/ui/badge";
 export const metadata: Metadata = {
   title: "Services — Dry Cleaning, Laundry, Stain Removal & More",
   description: "ABC Cleaners offers dry cleaning from $3.99, wash & fold ($2.49/lb), stain removal from $5.99, alterations, household item cleaning, and commercial laundry in Phoenix AZ. Same-day service available.",
-  alternates: { canonical: "https://abccleaners.com/services" },
+  alternates: { canonical: "https://www.abccleanersaz.com/services" },
 };
 
 export default function ServicesPage() {

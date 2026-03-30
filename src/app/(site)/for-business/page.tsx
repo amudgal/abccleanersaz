@@ -9,7 +9,7 @@ import { Badge } from "@/components/ui/badge";
 export const metadata: Metadata = {
   title: "Commercial Laundry for Business — Hotels, Restaurants, Offices",
   description: "ABC Cleaners offers commercial laundry services in Phoenix for hotels, restaurants, spas, offices, and schools. Custom plans, volume discounts, pickup & delivery. Call (602) 956-5271.",
-  alternates: { canonical: "https://abccleaners.com/for-business" },
+  alternates: { canonical: "https://www.abccleanersaz.com/for-business" },
 };
 
 export default function ForBusinessPage() {

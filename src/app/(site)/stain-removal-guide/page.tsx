@@ -20,7 +20,7 @@ export const metadata: Metadata = {
     "professional stain treatment",
     "dry cleaner stain removal phoenix az",
   ],
-  alternates: { canonical: "https://abccleaners.com/stain-removal-guide" },
+  alternates: { canonical: "https://www.abccleanersaz.com/stain-removal-guide" },
 };
 
 const stainTypes = [
