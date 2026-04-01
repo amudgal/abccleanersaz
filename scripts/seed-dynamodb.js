@@ -21,6 +21,16 @@ async function seed() {
   await doc.send(new PutCommand({ TableName: "ABCCleaners", Item: { pk: "FAQS", ...faqs } }));
   console.log("Seeded FAQS: visible=" + faqs.visible + " faqs=" + faqs.faqs.length);
 
+  // Seed admin user
+  const adminUser = {
+    pk: "ADMIN_USER#admin@abccleaners.com",
+    email: "admin@abccleaners.com",
+    passwordHash: "$2a$10$cvnzIKSkb8MMPE6AzIxK0ObxgWPjzWy6KIpGqbsnI940iz386KaSK",
+    role: "admin",
+  };
+  await doc.send(new PutCommand({ TableName: "ABCCleaners", Item: adminUser }));
+  console.log("Seeded ADMIN_USER: " + adminUser.email);
+
   console.log("Done! All data seeded to DynamoDB table ABCCleaners.");
 }
 

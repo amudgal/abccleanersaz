@@ -49,7 +49,11 @@ export async function PUT(req: NextRequest) {
       return NextResponse.json({ error: "Invalid data format" }, { status: 400 });
     }
 
+    // Merge with existing config to preserve other fields
+    const existing = await readJsonFile<SiteConfig>("config.json");
+
     const data: SiteConfig = {
+      ...existing,
       googlePlacesApiKey: body.googlePlacesApiKey.trim(),
     };
 

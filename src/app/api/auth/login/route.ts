@@ -1,23 +1,22 @@
 import { NextRequest, NextResponse } from "next/server";
 import { SignJWT } from "jose";
 import { compare } from "bcryptjs";
-import { readJsonFile, SiteConfig } from "@/lib/data";
+import { getItem } from "@/lib/dynamodb";
 
-async function getAdminCredentials(): Promise<{ email: string; hash: string }> {
-  // Read from DynamoDB (via readJsonFile which tries DynamoDB first)
+interface AdminUser {
+  email: string;
+  passwordHash: string;
+  role: string;
+}
+
+async function getAdminUser(email: string): Promise<AdminUser | null> {
   try {
-    const config = await readJsonFile<SiteConfig>("config.json");
-    if (config.adminEmail && config.adminPasswordHash) {
-      return { email: config.adminEmail, hash: config.adminPasswordHash };
-    }
+    const user = await getItem<AdminUser>(`ADMIN_USER#${email.toLowerCase()}`);
+    return user;
   } catch (err) {
-    console.error("Could not read config for auth:", err);
+    console.error("Could not read admin user from DynamoDB:", err);
+    return null;
   }
-  // Fallback to env vars
-  return {
-    email: process.env.ADMIN_EMAIL ?? "",
-    hash: process.env.ADMIN_PASSWORD_HASH ?? "",
-  };
 }
 
 export async function POST(req: NextRequest) {
@@ -36,30 +35,28 @@ export async function POST(req: NextRequest) {
       );
     }
 
-    const { email: adminEmail, hash: adminPasswordHash } = await getAdminCredentials();
+    const adminUser = await getAdminUser(email);
     const jwtSecret = new TextEncoder().encode(
       process.env.JWT_SECRET ?? "change-me-in-production"
     );
 
-    if (!adminEmail || !adminPasswordHash) {
-      console.error("Login config missing — check data/config.json or env vars");
-      return NextResponse.json(
-        { error: "Server authentication not configured" },
-        { status: 503 }
-      );
-    }
-
-    const emailMatch = email.toLowerCase() === adminEmail.toLowerCase();
-    const passwordMatch = await compare(password, adminPasswordHash);
-
-    if (!emailMatch || !passwordMatch) {
+    if (!adminUser) {
       return NextResponse.json(
         { error: "Invalid credentials" },
         { status: 401 }
       );
     }
 
-    const token = await new SignJWT({ email: adminEmail, role: "admin" })
+    const passwordMatch = await compare(password, adminUser.passwordHash);
+
+    if (!passwordMatch) {
+      return NextResponse.json(
+        { error: "Invalid credentials" },
+        { status: 401 }
+      );
+    }
+
+    const token = await new SignJWT({ email: adminUser.email, role: adminUser.role })
       .setProtectedHeader({ alg: "HS256" })
       .setIssuedAt()
       .setExpirationTime("8h")
