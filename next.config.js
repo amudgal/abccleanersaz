@@ -37,20 +37,6 @@ const nextConfig = {
       },
     ];
   },
-  async redirects() {
-    return [
-      {
-        source: '/privacy-policy',
-        destination: '/privacy-policy/',
-        permanent: true,
-      },
-      {
-        source: '/terms-and-conditions',
-        destination: '/terms-and-conditions/',
-        permanent: true,
-      },
-    ];
-  },
 };
 
 module.exports = nextConfig;
