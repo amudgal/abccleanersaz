@@ -42,6 +42,9 @@ export function Footer() {
               <Link href="/reviews" className="hover:text-white transition-colors">Customer Reviews</Link>
               <Link href="/pickup-delivery" className="hover:text-white transition-colors">Schedule Pickup</Link>
               <Link href="/faq" className="hover:text-white transition-colors">FAQ</Link>
+              <Link href="/sms-preferences" className="hover:text-white transition-colors">SMS Preferences</Link>
+              <Link href="/privacy-policy" className="hover:text-white transition-colors">Privacy Policy</Link>
+              <Link href="/terms-and-conditions" className="hover:text-white transition-colors">Terms &amp; Conditions</Link>
             </nav>
           </div>
 
@@ -52,6 +55,7 @@ export function Footer() {
               <Link href="/stain-removal-guide" className="hover:text-white transition-colors">Stain Removal Guide</Link>
               <Link href="/for-business" className="hover:text-white transition-colors">For Business</Link>
               <Link href="/faq" className="hover:text-white transition-colors">Common Questions</Link>
+              <Link href="/sms-preferences" className="hover:text-white transition-colors">SMS Preferences</Link>
               <Link href="/privacy-policy" className="hover:text-white transition-colors">Privacy Policy</Link>
               <Link href="/terms-and-conditions" className="hover:text-white transition-colors">Terms &amp; Conditions</Link>
             </nav>
@@ -60,6 +64,7 @@ export function Footer() {
         </div>
 
         <div className="mt-12 pt-8 border-t border-white/20 text-center text-blue-100 text-sm">
+          <p className="mb-2">AZ Best 1 Hour Cleaners Inc. DBA ABC Cleaners.</p>
           <p>&copy; {new Date().getFullYear()} ABC Cleaners. All rights reserved. Family-owned since 1986.</p>
         </div>
       </div>

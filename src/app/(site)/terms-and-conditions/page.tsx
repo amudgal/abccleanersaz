@@ -27,7 +27,7 @@ export default function TermsAndConditionsPage() {
         <div className="space-y-3">
           <h2 className="text-2xl text-gray-900">1. Company Information</h2>
           <p>
-            ABC Cleaners serves customers in Phoenix, Arizona through our North Phoenix and Biltmore locations.
+            AZ Best 1 Hour Cleaners Inc. DBA ABC Cleaners serves customers in Phoenix, Arizona through our North Phoenix and Biltmore locations.
             You may contact us at (623) 223-1460 or (602) 956-5271.
           </p>
         </div>
@@ -68,8 +68,11 @@ export default function TermsAndConditionsPage() {
           <h2 className="text-2xl text-gray-900">6. SMS and Marketing Communications</h2>
           <p>
             By providing your mobile number and opting in, you consent to receive recurring automated and non-automated
-            text messages from ABC Cleaners, including promotions, reminders, order updates, and service notifications.
+            text messages from AZ Best 1 Hour Cleaners Inc. DBA ABC Cleaners, including promotions, reminders, order updates, and service notifications.
             We may deliver these messages through service providers such as Twilio and Plivo.
+          </p>
+          <p>
+            SMS opt-in consent and mobile phone numbers are not shared with third parties or affiliates for their own marketing or promotional purposes.
           </p>
           <p>
             Message frequency varies. Message and data rates may apply. Consent is not a condition of purchase.
@@ -77,6 +80,12 @@ export default function TermsAndConditionsPage() {
           </p>
           <p>
             Carrier delivery is not guaranteed. Carriers are not liable for delayed or undelivered messages.
+          </p>
+          <p>
+            HELP response: "ABC Cleaners: For assistance, call (602) 956-5271. Reply STOP to unsubscribe."
+          </p>
+          <p>
+            STOP response: "You have successfully unsubscribed from ABC Cleaners text messages. No further messages will be sent. Reply START to resubscribe."
           </p>
         </div>
 

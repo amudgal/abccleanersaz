@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import Link from "next/link";
 import { User, Mail, Home, Package } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -88,6 +89,34 @@ export function PickupForm() {
             <textarea id="notes" name="notes" rows={3} placeholder="Any special instructions or garment care notes..." className="flex w-full rounded-md border border-gray-200 bg-transparent px-3 py-2 text-sm focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-gray-950" />
           </div>
         </div>
+      </div>
+
+      <div className="space-y-3 rounded-lg border border-gray-200 bg-gray-50 p-4">
+        <div className="flex items-start gap-3">
+          <input
+            id="smsConsent"
+            name="smsConsent"
+            type="checkbox"
+            className="mt-1 h-4 w-4 rounded border-gray-300 text-[#1e4a7a] focus:ring-[#2b7fb5]"
+          />
+          <Label htmlFor="smsConsent" className="text-sm font-normal leading-6 text-gray-700">
+            I agree to receive recurring automated promotional and personalized marketing text messages from AZ Best 1 Hour Cleaners Inc. at the phone number provided. Consent is not a condition of purchase.
+          </Label>
+        </div>
+        <p className="text-sm leading-6 text-gray-700">
+          Message frequency varies. Message and data rates may apply. Reply STOP to unsubscribe. Reply HELP for help.
+        </p>
+        <p className="text-sm leading-6 text-gray-700">
+          Privacy Policy:{" "}
+          <Link href="/privacy-policy" className="text-[#1e4a7a] underline hover:text-[#2b7fb5]">
+            https://www.abccleanersaz.com/privacy-policy
+          </Link>
+          <br />
+          Terms &amp; Conditions:{" "}
+          <Link href="/terms" className="text-[#1e4a7a] underline hover:text-[#2b7fb5]">
+            https://www.abccleanersaz.com/terms
+          </Link>
+        </p>
       </div>
 
       <Button type="submit" size="lg" className="w-full bg-gradient-to-r from-[#1e4a7a] to-[#2b7fb5] text-lg">

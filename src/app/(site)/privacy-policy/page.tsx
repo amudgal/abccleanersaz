@@ -20,7 +20,7 @@ export default function PrivacyPolicyPage() {
 
       <section className="max-w-5xl mx-auto px-4 py-12 space-y-8 text-gray-700 leading-7">
         <p>
-          ABC Cleaners respects your privacy and is committed to protecting your personal information.
+          ABC Cleaners (AZ Best 1 Hour Cleaners Inc. DBA ABC Cleaners) respects your privacy and is committed to protecting your personal information.
           This Privacy Policy explains what information we collect, how we use it, and your rights regarding that information.
         </p>
 
@@ -62,6 +62,12 @@ export default function PrivacyPolicyPage() {
           <p>
             We do not sell, rent, or share SMS opt-in data or mobile phone numbers with third parties for their own
             marketing purposes.
+          </p>
+          <p>
+            SMS consent records are not shared with third parties under any circumstances, except when required to deliver requested messaging services or comply with applicable law.
+          </p>
+          <p>
+            Carriers are not liable for delayed or undelivered messages.
           </p>
         </div>
 
