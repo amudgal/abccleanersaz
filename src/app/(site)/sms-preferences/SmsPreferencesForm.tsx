@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { useState } from "react";
+import { useState, useRef } from "react";
 import { Bell, BellOff } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
@@ -14,6 +14,8 @@ type SubmitState = {
 } | null;
 
 export function SmsPreferencesForm() {
+  const optInFormRef = useRef<HTMLFormElement>(null);
+  const optOutFormRef = useRef<HTMLFormElement>(null);
   const [optInLoading, setOptInLoading] = useState(false);
   const [optOutLoading, setOptOutLoading] = useState(false);
   const [optInResult, setOptInResult] = useState<SubmitState>(null);
@@ -62,7 +64,9 @@ export function SmsPreferencesForm() {
         message:
           "You are now opted in for SMS messages from ABC Cleaners. Reply STOP anytime to unsubscribe.",
       });
-      event.currentTarget.reset();
+      if (optInFormRef.current) {
+        optInFormRef.current.reset();
+      }
     } catch (error) {
       const message = error instanceof Error ? error.message : "Unable to submit your request.";
       setOptInResult({ kind: "error", message });
@@ -89,7 +93,9 @@ export function SmsPreferencesForm() {
         message:
           "You have successfully unsubscribed from ABC Cleaners text messages. Reply START to resubscribe.",
       });
-      event.currentTarget.reset();
+      if (optOutFormRef.current) {
+        optOutFormRef.current.reset();
+      }
     } catch (error) {
       const message = error instanceof Error ? error.message : "Unable to submit your request.";
       setOptOutResult({ kind: "error", message });
@@ -111,7 +117,7 @@ export function SmsPreferencesForm() {
           </CardDescription>
         </CardHeader>
         <CardContent>
-          <form onSubmit={handleOptInSubmit} className="space-y-4">
+          <form ref={optInFormRef} onSubmit={handleOptInSubmit} className="space-y-4">
             <div className="grid gap-4 md:grid-cols-2">
               <div className="space-y-2">
                 <Label htmlFor="optInFirstName">First Name *</Label>
@@ -180,7 +186,7 @@ export function SmsPreferencesForm() {
           </CardDescription>
         </CardHeader>
         <CardContent>
-          <form onSubmit={handleOptOutSubmit} className="space-y-4">
+          <form ref={optOutFormRef} onSubmit={handleOptOutSubmit} className="space-y-4">
             <div className="space-y-2">
               <Label htmlFor="optOutPhone">Mobile Number *</Label>
               <Input id="optOutPhone" name="phone" type="tel" required placeholder="(602) 555-0123" />
