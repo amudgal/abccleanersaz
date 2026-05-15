@@ -55,3 +55,7 @@ You'll need a `Dockerfile` (Next.js standalone output is configured in `next.con
 - Amplify automatically sets up CloudFront distribution
 - SSL/TLS is provisioned via ACM (free)
 - Enable `www` redirect in Amplify domain settings
+
+## Deployment Notes
+
+- 2026-05-15: Manual redeploy trigger commit created after adding legal pages (`/privacy-policy` and `/terms-and-conditions`).
