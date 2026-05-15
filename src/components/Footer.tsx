@@ -52,6 +52,8 @@ export function Footer() {
               <Link href="/stain-removal-guide" className="hover:text-white transition-colors">Stain Removal Guide</Link>
               <Link href="/for-business" className="hover:text-white transition-colors">For Business</Link>
               <Link href="/faq" className="hover:text-white transition-colors">Common Questions</Link>
+              <Link href="/privacy-policy" className="hover:text-white transition-colors">Privacy Policy</Link>
+              <Link href="/terms-and-conditions" className="hover:text-white transition-colors">Terms &amp; Conditions</Link>
             </nav>
             
           </div>
