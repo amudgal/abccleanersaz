@@ -53,7 +53,7 @@ export default function AdminLoginPage() {
         <CardContent className="p-8">
           <div className="text-center mb-8">
             <Image
-              src="/images/ABC@Main.png"
+              src="/images/abc-cleaners-logo.png"
               alt="ABC Cleaners"
               width={200}
               height={64}

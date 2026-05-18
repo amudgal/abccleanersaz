@@ -36,13 +36,13 @@ export const metadata: Metadata = {
     title: "ABC Cleaners — Professional Dry Cleaning & Laundry in Phoenix, AZ",
     description:
       "Trusted for 40+ years. Dry cleaning, stain removal, wash & fold, alterations. Pickup & delivery. Two Phoenix locations. 5-star rated.",
-    images: [{ url: "/images/mr-care-logo.png", width: 1200, height: 630, alt: "ABC Cleaners Mr. Care" }],
+    images: [{ url: "/images/abc-cleaners-logo.png", width: 1200, height: 630, alt: "ABC Cleaners" }],
   },
   twitter: {
     card: "summary_large_image",
     title: "ABC Cleaners — Dry Cleaning & Laundry Phoenix AZ",
     description: "40+ years trusted. Stain removal from $5.99. Pickup & delivery. Same-day service.",
-    images: ["/images/mr-care-logo.png"],
+    images: ["/images/abc-cleaners-logo.png"],
   },
   robots: {
     index: true,
@@ -56,7 +56,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html lang="en">
       <head>
-        <link rel="icon" href="/images/mr-care-small.png" />
+        <link rel="icon" href="/images/abc-cleaners-logo.png" />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(businessJsonLd) }}

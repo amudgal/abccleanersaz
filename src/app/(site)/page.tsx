@@ -62,7 +62,7 @@ export default function HomePage() {
               </div>
             </div>
             <div className="flex justify-center">
-              <Image src="/images/mr-care-logo.png" alt="Mr. Care Mascot — ABC Cleaners Phoenix" width={500} height={500} className="w-full max-w-md drop-shadow-2xl animate-float" priority />
+              <Image src="/images/abc-cleaners-logo.png" alt="ABC Cleaners Phoenix" width={500} height={500} className="w-full max-w-md drop-shadow-2xl animate-float" priority />
             </div>
           </div>
         </div>
@@ -100,10 +100,10 @@ export default function HomePage() {
         </div>
         <div className="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
           <div className="flex justify-center items-center">
-            <Image src="/images/ABC@NorthPhoenixLogo.png" alt="ABC Cleaners at North Phoenix — 1930 W Pinnacle Peak Rd, Phoenix, AZ 85027" width={400} height={200} className="max-w-full" style={{ width: 'auto', height: 'auto' }} />
+            <Image src="/images/abc-north-phoenix-logo.png" alt="ABC Cleaners at North Phoenix — 1930 W Pinnacle Peak Rd, Phoenix, AZ 85027" width={400} height={200} className="max-w-full" style={{ width: 'auto', height: 'auto' }} />
           </div>
           <div className="flex justify-center items-center">
-            <Image src="/images/ABC@BiltmoreLogo.png" alt="ABC Cleaners at Biltmore — 3023 N 24th St, Phoenix, AZ 85016" width={400} height={200} className="max-w-full" style={{ width: 'auto', height: 'auto' }} />
+            <Image src="/images/abc-biltmore-logo.png" alt="ABC Cleaners at Biltmore — 3023 N 24th St, Phoenix, AZ 85016" width={400} height={200} className="max-w-full" style={{ width: 'auto', height: 'auto' }} />
           </div>
         </div>
         <div className="text-center mt-8">

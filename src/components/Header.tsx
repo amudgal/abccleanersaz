@@ -69,7 +69,7 @@ export function Header() {
       <nav className="max-w-7xl mx-auto px-4 py-4">
         <div className="flex items-center justify-between">
           <Link href="/" className="flex items-center gap-3">
-            <Image src="/images/ABC@Main.png" alt="ABC Cleaners - Dry Cleaning & Laundry" width={240} height={80} className="h-12 md:h-16 w-auto" priority />
+            <Image src="/images/abc-cleaners-logo.png" alt="ABC Cleaners - Dry Cleaning & Laundry" width={240} height={80} className="h-12 md:h-16 w-auto" priority />
           </Link>
 
           {/* Desktop Navigation */}

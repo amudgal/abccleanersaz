@@ -7,8 +7,8 @@ export const businessJsonLd = {
   description:
     "ABC Cleaners (Mr. Care) is a family-owned professional dry cleaning and laundry service in Phoenix, AZ. Trusted for 40+ years with eco-friendly practices, same-day service, and pickup & delivery.",
   url: "https://www.abccleanersaz.com",
-  logo: "https://www.abccleanersaz.com/images/mr-care-logo.png",
-  image: "https://www.abccleanersaz.com/images/mr-care-logo.png",
+  logo: "https://www.abccleanersaz.com/images/abc-cleaners-logo.png",
+  image: "https://www.abccleanersaz.com/images/abc-cleaners-logo.png",
   telephone: "+16029565271",
   foundingDate: "1986",
   priceRange: "$$",
@@ -105,7 +105,7 @@ export const locationsJsonLd = [
     description:
       "Professional dry cleaning and laundry at North Phoenix. VIP membership and pickup & delivery.",
     url: "https://www.abccleanersaz.com/locations",
-    image: "https://www.abccleanersaz.com/images/ABC@NorthPhoenixLogo.png",
+    image: "https://www.abccleanersaz.com/images/abc-north-phoenix-logo.png",
     telephone: "+16232231460",
     address: {
       "@type": "PostalAddress",
@@ -149,7 +149,7 @@ export const locationsJsonLd = [
     description:
       "Professional dry cleaning and laundry near Biltmore Phoenix. Drive-thru, 24-hour drop box, VIP membership, and pickup & delivery.",
     url: "https://www.abccleanersaz.com/locations",
-    image: "https://www.abccleanersaz.com/images/ABC@BiltmoreLogo.png",
+    image: "https://www.abccleanersaz.com/images/abc-biltmore-logo.png",
     telephone: "+16029565271",
     address: {
       "@type": "PostalAddress",
