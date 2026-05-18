@@ -62,7 +62,7 @@ export default function HomePage() {
               </div>
             </div>
             <div className="flex justify-center">
-              <Image src="/images/abc-cleaners-logo.png" alt="ABC Cleaners Phoenix" width={500} height={500} className="w-full max-w-md drop-shadow-2xl animate-float" priority />
+              <Image src="/images/mr-care-logo.png" alt="Mr. Care Mascot — ABC Cleaners Phoenix" width={500} height={500} className="w-full max-w-md drop-shadow-2xl animate-float" priority />
             </div>
           </div>
         </div>
