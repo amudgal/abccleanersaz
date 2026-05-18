@@ -24,8 +24,8 @@ export const businessJsonLd = {
   },
   aggregateRating: {
     "@type": "AggregateRating",
-    ratingValue: "5.0",
-    reviewCount: "221",
+    ratingValue: "4.7",
+    reviewCount: "345",
     bestRating: "5",
     worstRating: "1",
   },
@@ -136,8 +136,8 @@ export const locationsJsonLd = [
     ],
     aggregateRating: {
       "@type": "AggregateRating",
-      ratingValue: "4.8",
-      reviewCount: "127",
+      ratingValue: "4.6",
+      reviewCount: "123",
     },
     parentOrganization: { "@id": "https://www.abccleanersaz.com/#organization" },
   },
@@ -180,8 +180,8 @@ export const locationsJsonLd = [
     ],
     aggregateRating: {
       "@type": "AggregateRating",
-      ratingValue: "4.9",
-      reviewCount: "94",
+      ratingValue: "4.7",
+      reviewCount: "222",
     },
     parentOrganization: { "@id": "https://www.abccleanersaz.com/#organization" },
   },
