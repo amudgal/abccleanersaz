@@ -139,7 +139,7 @@ export default function TermsAndConditionsPage() {
         <div className="space-y-3">
           <h2 className="text-2xl text-gray-900">13. Contact Us</h2>
           <p>
-            Questions about these Terms can be sent through our contact channels listed on the
+            Questions about these Terms can be sent to abc1hourcleaners@gmail.com or through our contact channels listed on the
             {" "}
             <Link href="/locations" className="text-[#1e4a7a] hover:text-[#2b7fb5] underline">
               Locations page
