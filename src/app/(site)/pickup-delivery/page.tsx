@@ -78,7 +78,7 @@ export default function PickupDeliveryPage() {
       <section className="max-w-4xl mx-auto px-4 py-16">
         <Card className="border-2 shadow-xl">
           <CardHeader className="bg-gradient-to-r from-[#1e4a7a] to-[#2b7fb5] text-white">
-            <CardTitle className="text-2xl">Existing Customer Scheduling</CardTitle>
+            <CardTitle className="text-2xl">Customer Scheduling</CardTitle>
             <CardDescription className="text-blue-100">Choose your location to log in and manage your pickup &amp; delivery account</CardDescription>
           </CardHeader>
           <CardContent className="p-6 md:p-8">
