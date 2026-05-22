@@ -4,7 +4,6 @@ import { Package, MapPin, ExternalLink, ShieldCheck } from "lucide-react";
 import DryCleaningIcon from "@/components/icons/DryCleaningIcon";
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { PickupForm } from "./PickupForm";
 
 export const metadata: Metadata = {
   title: "Pickup & Delivery — For Orders Over $30",
@@ -77,18 +76,6 @@ export default function PickupDeliveryPage() {
       </section>
 
       <section className="max-w-4xl mx-auto px-4 py-16">
-        <Card className="border-2 shadow-xl mb-8">
-          <CardHeader className="bg-white">
-            <CardTitle className="text-2xl text-gray-900">Request Pickup &amp; Delivery</CardTitle>
-            <CardDescription className="text-gray-600">
-              Submit this live form to request service and optionally opt in to SMS updates and promotions.
-            </CardDescription>
-          </CardHeader>
-          <CardContent className="p-6 md:p-8">
-            <PickupForm />
-          </CardContent>
-        </Card>
-
         <Card className="border-2 shadow-xl">
           <CardHeader className="bg-gradient-to-r from-[#1e4a7a] to-[#2b7fb5] text-white">
             <CardTitle className="text-2xl">Existing Customer Scheduling</CardTitle>
