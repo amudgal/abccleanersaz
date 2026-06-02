@@ -26,7 +26,8 @@ export function SmsPreferencesForm() {
     phone: string;
     firstName?: string;
     lastName?: string;
-    smsConsent?: boolean;
+    marketingConsent?: boolean;
+    transactionalConsent?: boolean;
   }) {
     const response = await fetch("/api/sms-preferences", {
       method: "POST",
@@ -49,7 +50,8 @@ export function SmsPreferencesForm() {
     const firstName = String(formData.get("firstName") || "");
     const lastName = String(formData.get("lastName") || "");
     const phone = String(formData.get("phone") || "");
-    const smsConsent = formData.get("smsConsent") === "on";
+    const marketingConsent = formData.get("marketingConsent") === "on";
+    const transactionalConsent = formData.get("transactionalConsent") === "on";
 
     try {
       await submitPreference({
@@ -57,7 +59,8 @@ export function SmsPreferencesForm() {
         firstName,
         lastName,
         phone,
-        smsConsent,
+        marketingConsent,
+        transactionalConsent,
       });
       setOptInResult({
         kind: "success",
@@ -134,32 +137,39 @@ export function SmsPreferencesForm() {
               <Input id="optInPhone" name="phone" type="tel" required placeholder="(602) 555-0123" />
             </div>
 
-            <div className="rounded-lg border border-gray-200 bg-gray-50 p-4 text-sm leading-6 text-gray-700 space-y-3">
+            <div className="rounded-lg border border-gray-200 bg-gray-50 p-4 text-sm leading-6 text-gray-700 space-y-4">
               <div className="flex items-start gap-3">
                 <input
-                  id="smsConsent"
-                  name="smsConsent"
+                  id="transactionalConsent"
+                  name="transactionalConsent"
                   type="checkbox"
-                  required
                   className="mt-1 h-4 w-4 rounded border-gray-300 text-[#1e4a7a] focus:ring-[#2b7fb5]"
                 />
-                <Label htmlFor="smsConsent" className="font-normal leading-6">
-                  I agree to receive recurring automated promotional and personalized marketing text messages from AZ Best 1 Hour Cleaners Inc. at the phone number provided. Consent is not a condition of purchase.
+                <Label htmlFor="transactionalConsent" className="font-normal leading-6">
+                  By checking, you are allowing to receive <strong>transactional/informational SMS</strong> communications regarding account notifications, customer care, etc. from AZ Best 1 Hour Cleaners Inc. Message frequency may vary. Data rates may apply. Reply <strong>STOP to opt-out</strong>.
                 </Label>
               </div>
-              <p>
-                Message frequency varies. Message and data rates may apply. Reply STOP to unsubscribe. Reply HELP for help.
-              </p>
-              <p>
-                Privacy Policy:{" "}
+              <div className="flex items-start gap-3">
+                <input
+                  id="marketingConsent"
+                  name="marketingConsent"
+                  type="checkbox"
+                  className="mt-1 h-4 w-4 rounded border-gray-300 text-[#1e4a7a] focus:ring-[#2b7fb5]"
+                />
+                <Label htmlFor="marketingConsent" className="font-normal leading-6">
+                  By checking, you are allowing to receive <strong>promotional/marketing SMS</strong> communications from AZ Best 1 Hour Cleaners Inc. Message frequency may vary. Data rates may apply. Reply <strong>HELP for help or STOP to opt-out</strong>.
+                </Label>
+              </div>
+              <p className="text-xs text-gray-500">
+                Both checkboxes are optional. Consent is not a condition of purchase.{" "}
                 <Link href="/privacy-policy" className="text-[#1e4a7a] underline hover:text-[#2b7fb5]">
-                  https://www.abccleanersaz.com/privacy-policy
-                </Link>
-                <br />
-                Terms &amp; Conditions:{" "}
+                  Privacy Policy
+                </Link>{" "}
+                &amp;{" "}
                 <Link href="/terms" className="text-[#1e4a7a] underline hover:text-[#2b7fb5]">
-                  https://www.abccleanersaz.com/terms
+                  Terms &amp; Conditions
                 </Link>
+                .
               </p>
             </div>
 

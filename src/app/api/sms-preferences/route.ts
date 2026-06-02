@@ -8,7 +8,8 @@ interface SmsPreferencePayload {
   phone: string;
   firstName?: string;
   lastName?: string;
-  smsConsent?: boolean;
+  marketingConsent?: boolean;
+  transactionalConsent?: boolean;
 }
 
 function normalizePhone(phone: string): string {
@@ -29,20 +30,14 @@ export async function POST(request: NextRequest) {
       return NextResponse.json({ error: "Please enter a valid phone number." }, { status: 400 });
     }
 
-    if (action === "opt_in" && !body.smsConsent) {
-      return NextResponse.json(
-        { error: "SMS consent is required to opt in." },
-        { status: 400 }
-      );
-    }
-
     const nowIso = new Date().toISOString();
     await putItem(`SMS_PREF#${normalizedPhone}`, {
       phone: normalizedPhone,
       firstName: body.firstName?.trim() || null,
       lastName: body.lastName?.trim() || null,
       status: action === "opt_in" ? "subscribed" : "unsubscribed",
-      consentGiven: action === "opt_in" ? true : false,
+      marketingConsent: action === "opt_in" ? (body.marketingConsent ?? false) : false,
+      transactionalConsent: action === "opt_in" ? (body.transactionalConsent ?? false) : false,
       source: "/sms-preferences",
       updatedAt: nowIso,
     });
