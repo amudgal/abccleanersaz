@@ -76,14 +76,14 @@ export default async function PricingPage() {
         <Card className="mt-8 shadow-lg border-2 border-green-200">
           <CardHeader>
             <CardTitle className="text-xl flex items-center gap-2">
-              Pickup & Delivery <Badge className="bg-green-500">Orders Over $30</Badge>
+              Pickup & Delivery <Badge className="bg-green-500">Minimum Order $30</Badge>
             </CardTitle>
           </CardHeader>
           <CardContent>
             <div className="grid md:grid-cols-2 gap-6">
               <div className="text-center p-4">
-                <p className="text-3xl font-bold text-green-600">FREE</p>
-                <p className="text-gray-600 mt-1">Orders over $30</p>
+                <p className="text-3xl font-bold text-green-600">$6 - $10</p>
+                <p className="text-gray-600 mt-1">Pick up - Delivery - Based off mileage - Minimum Order $30</p>
               </div>
               <div className="text-center p-4">
                 <p className="text-3xl font-bold text-[#2b7fb5]">24-48 hrs</p>
