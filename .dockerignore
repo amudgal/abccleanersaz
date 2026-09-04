@@ -1,0 +1,12 @@
+node_modules
+.next
+out
+.git
+.gitignore
+.env
+.env.local
+*.tsbuildinfo
+.DS_Store
+figma/extracted
+AWS-DEPLOYMENT.md
+cloudflare-dns-import.txt

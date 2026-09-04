@@ -30,52 +30,29 @@ export default function PickupDeliveryPage() {
 
   return (
     <div>
-      <section className="bg-gradient-to-br from-[#1e4a7a] to-[#2b7fb5] text-white py-16">
+      <section className="bg-gradient-to-br from-[#1e4a7a] to-[#2b7fb5] text-white py-12">
         <div className="max-w-7xl mx-auto px-4 text-center">
-          <div className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-sm px-4 py-2 rounded-full mb-6">
+          <div className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-sm px-4 py-2 rounded-full mb-4">
             <Package className="w-5 h-5" /><span>Convenient & Reliable</span>
           </div>
-          <h1 className="text-4xl md:text-5xl mb-4">Pickup & Delivery Service</h1>
-          <p className="text-xl text-blue-100 max-w-3xl mx-auto">
+          <h1 className="text-4xl md:text-5xl mb-3">Pickup & Delivery Service</h1>
+          <p className="text-lg text-blue-100 max-w-3xl mx-auto mb-8">
             Schedule seamless pickup and delivery at your convenience. Orders over $30. We bring premium garment care right to your doorstep.
           </p>
-        </div>
-      </section>
 
-      <section className="max-w-7xl mx-auto px-4 py-16">
-        <div className="text-center mb-12">
-          <h2 className="text-3xl md:text-4xl mb-4">How It Works</h2>
-        </div>
-        <div className="grid md:grid-cols-4 gap-8 mb-12">
-          {howItWorks.map((item, index) => (
-            <div key={index} className="text-center space-y-4">
-              <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-gradient-to-br from-[#1e4a7a] to-[#2b7fb5] text-white text-2xl font-bold">{item.step}</div>
-              <h3 className="text-xl font-semibold">{item.title}</h3>
-              <p className="text-gray-600">{item.description}</p>
-            </div>
-          ))}
-        </div>
-      </section>
-
-      <section className="bg-gradient-to-br from-blue-50 to-cyan-50 py-16">
-        <div className="max-w-7xl mx-auto px-4">
-          <div className="text-center mb-8">
-            <h2 className="text-3xl md:text-4xl mb-4">Services Available for Pickup & Delivery</h2>
-          </div>
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
+          <h2 className="text-lg md:text-xl mb-4 text-blue-100">Services Available for Pickup & Delivery</h2>
+          <div className="grid grid-cols-3 md:grid-cols-6 gap-3">
             {services.map((service, index) => (
-              <Card key={index} className="bg-white hover:shadow-lg transition-shadow">
-                <CardContent className="p-6 text-center space-y-2">
-                  <div className="text-4xl">{service.icon}</div>
-                  <p className="font-medium text-sm">{service.name}</p>
-                </CardContent>
-              </Card>
+              <div key={index} className="bg-white/10 backdrop-blur-sm rounded-lg p-3 text-center space-y-1">
+                <div className="text-2xl flex items-center justify-center">{service.icon}</div>
+                <p className="font-medium text-xs">{service.name}</p>
+              </div>
             ))}
           </div>
         </div>
       </section>
 
-      <section className="max-w-4xl mx-auto px-4 py-16">
+      <section className="max-w-4xl mx-auto px-4 py-10">
         <Card className="border-2 shadow-xl">
           <CardHeader className="bg-gradient-to-r from-[#1e4a7a] to-[#2b7fb5] text-white">
             <CardTitle className="text-2xl">Customer Scheduling</CardTitle>
@@ -134,6 +111,21 @@ export default function PickupDeliveryPage() {
             </div>
           </CardContent>
         </Card>
+      </section>
+
+      <section className="max-w-7xl mx-auto px-4 py-16">
+        <div className="text-center mb-12">
+          <h2 className="text-3xl md:text-4xl mb-4">How It Works</h2>
+        </div>
+        <div className="grid md:grid-cols-4 gap-8 mb-12">
+          {howItWorks.map((item, index) => (
+            <div key={index} className="text-center space-y-4">
+              <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-gradient-to-br from-[#1e4a7a] to-[#2b7fb5] text-white text-2xl font-bold">{item.step}</div>
+              <h3 className="text-xl font-semibold">{item.title}</h3>
+              <p className="text-gray-600">{item.description}</p>
+            </div>
+          ))}
+        </div>
       </section>
     </div>
   );
